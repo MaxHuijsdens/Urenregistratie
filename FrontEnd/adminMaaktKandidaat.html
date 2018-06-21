@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+                background-color:#140f11;
+                color:#eaeff2;
+            }
+            h1{
+	            font-family: "museo-sans",sans-serif;
+	            font-weight: 700;
+	            font-size: 18px;
+                color:#bceb1b;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>MAAK KANDIDAAT AAN:</h1>
+       
+        <table>
+			<tr>
+				<td>
+                    Voornaam:
+				</td>
+				<td>
+                    <input type=text value=Voornaam id=naamTextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Achternaam:
+                </td>
+                <td>
+                    <input type=text value=Achternaam id=naamTextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Kandidaat ID:
+                </td>
+                <td>
+                    <input type="text" value=12345678 id=idTextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Bedrijf van Kandidaat:
+                </td>
+                <td>
+                    <select id=bedrijfDropDown name=Bedrijf>
+                            <option disabled>Selecteer Bedrijf</option>
+                            <option>Geen bedrijf</option>
+                            <option>Working Talent</option>
+                            <option>Atos</option>
+                            <option>KLM</option>
+                            <option>ING</option>
+                            <option>Verzekeringsmaatschappij A</option>
+                            <option>Bank A</option>
+                        </select>
+                </td>
+            </tr>
+            <td>
+                Contactpersoon:
+            </td>
+            <td>
+                <select id=CPDropDown name=Contactpersoon>
+                        <option disabled>Selecteer Contactpersoon</option>
+                        <option>Geen contactpersoon</option>
+                        <option>Mark Hink</option>
+                        <option>Bart Jaap</option>
+                        <option>Frits Flipjes</option>
+                        <option>Henk Bakker</option>
+                        <option>De grote onbekende</option>
+                        <option>Piet</option>
+                    </select>
+            </td>
+            <tr>
+                <td>
+                    E-mail van Kandidaat:
+                </td>
+                <td>
+                    <input type="email" id=emailTextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wachtwoord:
+                </td>
+                <td>
+                    <input type="text" id=wachtwoordTextBox>
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+
+        <input type="submit" value="Verzenden" onclick=mijnfunctie()>     
+        <br>
+    </body>
+</html>
