@@ -17,4 +17,8 @@ public class TestclassService {
 		return testclassRepository.findAll();
 	}
 	
+	public Testclass save(Testclass t) {
+		return testclassRepository.save(t);
+	}
+	
 }
