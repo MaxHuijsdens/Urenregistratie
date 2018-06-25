@@ -3,16 +3,19 @@
         <script src="jquery-3.3.1.min.js"></script>
         <script>
             $(document).ready(function(){
-                $("#verzendBtn").click(function() {
+                $("#registreerKandidaatForm").submit(function(event) {
+                    event.preventDefault();
                     alert("Je hebt op een button geklikt");
-                    var naam = $("#naamTextBox").val();
-                    var dataJson = '{"naam":"'+naam+'"}';
+                    var naam = $("#voornaamTextBox").val() + ' '+$("#achternaamTextBox").val();
+                    var email = $("#emailTextBox").val();
+                    var telefoon = $("#telefoonnummerTextBox").val();
+                    var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoon":"'+telefoon+'"}';
                     var xhttp = new XMLHttpRequest();
                     xhttp.open("POST", "http://localhost:8082/api/testclass", true);
                     xhttp.setRequestHeader("Content-type", "application/json");
                     xhttp.send(dataJson);
                 });
-                });
+            });
         </script>
 
         <style>
@@ -138,13 +141,14 @@
                <div class="infoContainerTitle">
                    Gegevens Kandidaat:
                </div>
+               <form id="registreerKandidaatForm">
                 <table>
                     <tr>
                         <td>
                             Voornaam:
                         </td>
                         <td>
-                            <input type=text value=Voornaam id=naamTextBox>
+                            <input type=text placeholder=Voornaam id=voornaamTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -152,7 +156,15 @@
                             Achternaam:
                         </td>
                         <td>
-                            <input type=text value=Achternaam id=naamTextBox>
+                            <input type=text placeholder=Achternaam id=achternaamTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefoonnummer:
+                        </td>
+                        <td>
+                            <input type=text placeholder=Telefoonnummer id=telefoonnummerTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -160,7 +172,7 @@
                             Kandidaat ID:
                         </td>
                         <td>
-                            <input type="text" value=12345678 id=idTextBox>
+                            <input type="text" placeholder=ID id=idTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -200,7 +212,7 @@
                             E-mail van Kandidaat:
                         </td>
                         <td>
-                            <input type="email" id=emailTextBox>
+                            <input type="email" placeholder="email@voorbeeld.com" id=emailTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -217,8 +229,9 @@
                 <a class="returnLink" href="beheerAccounts.html">
                         <input type="button" value="Ga Terug"> 
                 </a>    
-                <input type="submit" value="Verzenden" onclick=createCandidate()>     
+                <input type="submit" value="Verzenden">     
                 <br>
+                </form>
             </div>
        </div>
     </body>
