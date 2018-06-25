@@ -1,136 +1,31 @@
 <html>
     <head>
+        <meta charset="utf-8">
+        <link rel=stylesheet href=css/UrenRegistratieMain.css>
+        
         <script src="jquery-3.3.1.min.js"></script>
         <script>
             $(document).ready(function(){
-                $("#verzendBtn").click(function() {
+                $("#registreerKandidaatForm").submit(function(event) {
+                    event.preventDefault();
                     alert("Je hebt op een button geklikt");
-                    var naam = $("#naamTextBox").val();
-                    var dataJson = '{"naam":"'+naam+'"}';
+                    var naam = $("#voornaamTextBox").val() + ' '+$("#achternaamTextBox").val();
+                    var email = $("#emailTextBox").val();
+                    var telefoon = $("#telefoonnummerTextBox").val();
+                    var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoon":"'+telefoon+'"}';
                     var xhttp = new XMLHttpRequest();
                     xhttp.open("POST", "http://localhost:8082/api/testclass", true);
                     xhttp.setRequestHeader("Content-type", "application/json");
                     xhttp.send(dataJson);
                 });
-                });
+            });
         </script>
-
-        <style>
-            body{
-                font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
-                font-size: 1rem;
-                line-height: 2;
-                color:#0f1411;
-                background-color:#eaeff2;
-                margin:0;
-            }
-            h1{
-	            font-family: "museo-sans",sans-serif;
-	            font-weight: 700;
-	            font-size: 18px;
-                color:#f6a21c;
-                color:#bceb1b;
-            }
-            div.menu{
-                margin-left: auto;
-                margin-right: auto;
-                padding-left: 15px;
-                padding-right: 15px;
-                line-height: 100px;
-                height: 100px;
-                background:#0f1410;
-                width:100%;
-                position:fixed;
-                z-index: 10;
-            }           
-            img.logoWT{
-                margin:10px;
-                float: left;
-                padding: 0;
-                display:block;
-                height: 80px;
-                width: 185px;
-            }
-
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                height: 100px;
-            }
-            li {
-                float: left;
-            }
-            li a {
-                display: block;
-                
-	            font-family: "museo-sans",sans-serif;
-	            font-weight: 700;
-	            font-size: 18px;
-                color:#f6a21c;
-                color:#bceb1b;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                text-transform: lowercase;
-            }
-            li a:hover {
-                background-color:red;
-            }
-
-            div.slide-panel{
-                position: relative;
-                padding-top: 100px;
-                padding-left: 15px;
-            }
-            div.infoContainer{
-                padding: 15px;
-                margin-top: 15px;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-                background: #fff;
-                width:500px;
-                font-size: 15px;
-                line-height: 26px;
-            }
-            div.infoContainerTitle{
-                
-	            font-family: "museo-sans",sans-serif;
-	            font-weight: 700;
-                font-size: 18px;
-                padding: 5px;
-                margin-bottom: 10px;
-                color:#f6a21c;
-                background:#0f1410;
-                color:#bceb1b;
-            }
-
-            a{
-                
-                text-decoration: none;
-            }
-        </style>
     </head>
     <body>
         <div class="menu">
-            <a class="returnLink" href="beheerAccounts.html">
+            <a href="beheerAccounts.html">
                 <img class="logoWT" src="images/logoWT.svg">
             </a>
-            <nav>
-                <ul>
-                    <li>
-                        <a class="createKandidateLink" href="maakKandidaat.html">
-                            <h1>MAAK KANDIDAAT 
-                                AAN:   </h1>                       
-                        </a>
-                        <a class="createKandidateLink" href="beheerAccounts.html">
-                                <h1>GA TERUG   </h1>                       
-                            </a>
-                    </li>
-                </ul>
-            </nav>
         </div>
 
        <div class="slide-panel">
@@ -138,13 +33,14 @@
                <div class="infoContainerTitle">
                    Gegevens Kandidaat:
                </div>
+               <form id="registreerKandidaatForm">
                 <table>
                     <tr>
                         <td>
                             Voornaam:
                         </td>
                         <td>
-                            <input type=text value=Voornaam id=naamTextBox>
+                            <input type=text placeholder=Voornaam id=voornaamTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -152,7 +48,15 @@
                             Achternaam:
                         </td>
                         <td>
-                            <input type=text value=Achternaam id=naamTextBox>
+                            <input type=text placeholder=Achternaam id=achternaamTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telefoonnummer:
+                        </td>
+                        <td>
+                            <input type=text placeholder=Telefoonnummer id=telefoonnummerTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -160,7 +64,7 @@
                             Kandidaat ID:
                         </td>
                         <td>
-                            <input type="text" value=12345678 id=idTextBox>
+                            <input type="text" placeholder=ID id=idTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -200,7 +104,7 @@
                             E-mail van Kandidaat:
                         </td>
                         <td>
-                            <input type="email" id=emailTextBox>
+                            <input type="email" placeholder="email@voorbeeld.com" id=emailTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -214,11 +118,12 @@
                 </table>
                 
                 <br>
-                <a class="returnLink" href="beheerAccounts.html">
+                <a class="returnLink" href="overzichtKandidaten.html">
                         <input type="button" value="Ga Terug"> 
                 </a>    
-                <input type="submit" value="Verzenden" onclick=createCandidate()>     
+                <input type="submit" value="Verzenden">     
                 <br>
+                </form>
             </div>
        </div>
     </body>
