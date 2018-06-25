@@ -1,0 +1,171 @@
+<html>
+    <head>
+        <style>
+            body{
+                font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
+                font-size: 1rem;
+                line-height: 2;
+                color:#0f1411;
+                background-color:#eaeff2;
+                margin:0;
+            }
+            h1{
+	            font-family: "museo-sans",sans-serif;
+	            font-weight: 700;
+	            font-size: 18px;
+                color:#f6a21c;
+                color:#bceb1b;
+            }
+            div.menu{
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+                line-height: 100px;
+                height: 100px;
+                background:#0f1410;
+                width:100%;
+                position:fixed;
+                z-index: 10;
+            }           
+            img.logoWT{
+                margin:10px;
+                float: left;
+                padding: 0;
+                display:block;
+                height: 80px;
+                width: 185px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                height: 100px;
+            }
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                
+	            font-family: "museo-sans",sans-serif;
+	            font-weight: 700;
+	            font-size: 18px;
+                color:#f6a21c;
+                color:#bceb1b;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                text-transform: lowercase;
+            }
+            li a:hover {
+                background-color:red;
+            }
+
+            div.slide-panel{
+                position: relative;
+                padding-top: 100px;
+                padding-left: 15px;
+            }
+            div.infoContainer{
+                padding: 15px;
+                margin-top: 15px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+                background: #fff;
+                width:500px;
+                font-size: 15px;
+                line-height: 26px;
+            }
+            div.infoContainerTitle{
+                
+	            font-family: "museo-sans",sans-serif;
+	            font-weight: 700;
+                font-size: 18px;
+                padding: 5px;
+                margin-bottom: 10px;
+                color:#f6a21c;
+                background:#0f1410;
+                color:#bceb1b;
+            }
+
+            a{
+                
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <a href="beheerAccounts.html">
+                <img class="logoWT" src="images/logoWT.svg">
+            </a>
+            <ul class="menuList">
+                <li><a href="maakMedewerker.html">MAAK MEDEWERKER AAN</a></li>
+                <li><a href="beheerAccounts.html">GA TERUG</a></li>
+            </ul>
+        </div>
+        
+        
+       <div class="slide-panel">
+           <div class="infoContainer">
+               <div class="infoContainerTitle">
+                   Gegevens Medewerker:
+               </div>
+                <table>
+                    <tr>
+                        <td>
+                            Voornaam:
+                        </td>
+                        <td>
+                            <input type=text value=Voornaam id=naamTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Achternaam:
+                        </td>
+                        <td>
+                            <input type=text value=Achternaam id=naamTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Medewerker ID:
+                        </td>
+                        <td>
+                            <input type="text" value=12345678 id=idTextBox>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            E-mail adres:
+                        </td>
+                        <td>
+                            <input type="email" id=emailTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Wachtwoord:
+                        </td>
+                        <td>
+                            <input type="text" id=wachtwoordTextBox>
+                        </td>
+                    </tr>
+                </table>
+                
+                <br>
+                <a class="returnLink" href="beheerAccounts.html">
+                        <input type="button" value="Ga Terug"> 
+                </a>    
+                <input type="submit" value="Verzenden" onclick=createCandidate()>     
+                <br>
+            </div>
+       </div>
+    </body>
+</html>
