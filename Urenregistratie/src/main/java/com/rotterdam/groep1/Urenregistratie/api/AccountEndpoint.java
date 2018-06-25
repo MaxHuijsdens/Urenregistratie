@@ -9,13 +9,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import com.rotterdam.groep1.Urenregistratie.controller.AccountService;
 import com.rotterdam.groep1.Urenregistratie.domein.Account;
 
-//@Path("account")
-@Component
 public abstract class AccountEndpoint {
 
 	@Autowired
