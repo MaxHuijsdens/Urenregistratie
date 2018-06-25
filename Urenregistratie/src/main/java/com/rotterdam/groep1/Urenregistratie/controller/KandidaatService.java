@@ -6,8 +6,19 @@ import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
+
 @Component
-public class KandidaatService extends AccountService {
+public class KandidaatService {
 	@Autowired
 	KandidaatRepository kandidaatRepository;
+	
+	public Iterable<Kandidaat> geefAllen() {
+		return kandidaatRepository.findAll();
+	}
+	
+	public Kandidaat save(Kandidaat t) {
+		System.out.println(t);
+		return kandidaatRepository.save(t);
+	}
 }
