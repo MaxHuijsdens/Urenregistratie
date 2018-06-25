@@ -2,24 +2,6 @@
     <head>
         <meta charset="utf-8">
         <link rel=stylesheet href=css/UrenRegistratieMain.css>
-        
-        <script src="jquery-3.3.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#registreerKandidaatForm").submit(function(event) {
-                    event.preventDefault();
-                    alert("Je hebt op een button geklikt");
-                    var naam = $("#voornaamTextBox").val() + ' '+$("#achternaamTextBox").val();
-                    var email = $("#emailTextBox").val();
-                    var telefoon = $("#telefoonnummerTextBox").val();
-                    var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoon":"'+telefoon+'"}';
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", "http://localhost:8082/api/testclass", true);
-                    xhttp.setRequestHeader("Content-type", "application/json");
-                    xhttp.send(dataJson);
-                });
-            });
-        </script>
     </head>
     <body>
         <div class="menu">
@@ -31,9 +13,9 @@
        <div class="slide-panel">
            <div class="infoContainer">
                <div class="infoContainerTitle">
-                   Gegevens Kandidaat:
+                   Gegevens Contactpersoon:
                </div>
-               <form id="registreerKandidaatForm">
+               <form id="registreerContactpersoonForm">
                 <table>
                     <tr>
                         <td>
@@ -61,7 +43,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Kandidaat ID:
+                            Contactpersoon ID:
                         </td>
                         <td>
                             <input type="text" placeholder=ID id=idTextBox>
@@ -69,7 +51,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Bedrijf van Kandidaat:
+                            Bedrijf van Contactpersoon:
                         </td>
                         <td>
                             <select id=bedrijfDropDown name=Bedrijf>
@@ -84,27 +66,20 @@
                                 </select>
                         </td>
                     </tr>
-                    <td>
-                        Contactpersoon:
-                    </td>
-                    <td>
-                        <select id=CPDropDown name=Contactpersoon>
-                                <option disabled>Selecteer Contactpersoon</option>
-                                <option>Geen contactpersoon</option>
-                                <option>Mark Hink</option>
-                                <option>Bart Jaap</option>
-                                <option>Frits Flipjes</option>
-                                <option>Henk Bakker</option>
-                                <option>De grote onbekende</option>
-                                <option>Piet</option>
-                            </select>
-                    </td>
                     <tr>
                         <td>
                             E-mail adres:
                         </td>
                         <td>
                             <input type="email" placeholder="email@voorbeeld.com" id=emailTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Afdeling:
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Afdeling" id=afdelingTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -118,7 +93,7 @@
                 </table>
                 
                 <br>
-                <a class="returnLink" href="overzichtKandidaten.html">
+                <a class="returnLink" href="overzichtContactpersonen.html">
                         <input type="button" value="Ga Terug"> 
                 </a>    
                 <input type="submit" value="Verzenden">     
