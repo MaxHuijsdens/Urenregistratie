@@ -1,5 +1,20 @@
 <html>
     <head>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#verzendBtn").click(function() {
+                    alert("Je hebt op een button geklikt");
+                    var naam = $("#naamTextBox").val();
+                    var dataJson = '{"naam":"'+naam+'"}';
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", "http://localhost:8082/api/testclass", true);
+                    xhttp.setRequestHeader("Content-type", "application/json");
+                    xhttp.send(dataJson);
+                });
+                });
+        </script>
+
         <style>
             body{
                 font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
