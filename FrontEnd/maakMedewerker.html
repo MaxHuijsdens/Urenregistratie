@@ -1,5 +1,22 @@
 <html>
     <head>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#registreerWerknemerForm").submit(function(event) {
+                    event.preventDefault();
+                    alert("Je hebt op een button geklikt");
+                    var naam = $("#voornaamTextBox").val() + ' '+$("#achternaamTextBox").val();
+                    var email = $("#emailTextBox").val();
+                    var dataJson = '{"naam":"'+naam+'", "email":"'+email+'"}';
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", "http://localhost:8082/api/testclass", true);
+                    xhttp.setRequestHeader("Content-type", "application/json");
+                    xhttp.send(dataJson);
+                });
+            });
+        </script>
+
         <style>
             body{
                 font-family: "Open Sans","Helvetica Neue",Arial,sans-serif;
@@ -115,13 +132,14 @@
                <div class="infoContainerTitle">
                    Gegevens Medewerker:
                </div>
+               <form id="registreerWerknemerForm">
                 <table>
                     <tr>
                         <td>
                             Voornaam:
                         </td>
                         <td>
-                            <input type=text value=Voornaam id=naamTextBox>
+                            <input type=text placeholder=Voornaam id=voornaamTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -129,7 +147,7 @@
                             Achternaam:
                         </td>
                         <td>
-                            <input type=text value=Achternaam id=naamTextBox>
+                            <input type=text placeholder=Achternaam id=achternaamTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -137,7 +155,7 @@
                             Medewerker ID:
                         </td>
                         <td>
-                            <input type="text" value=12345678 id=idTextBox>
+                            <input type="text" placeholder=12345678 id=idTextBox>
                         </td>
                     </tr>
                     
@@ -146,7 +164,7 @@
                             E-mail adres:
                         </td>
                         <td>
-                            <input type="email" id=emailTextBox>
+                            <input type="email" placeholder="naam@voorbeeld.com" id=emailTextBox>
                         </td>
                     </tr>
                     <tr>
@@ -165,6 +183,7 @@
                 </a>    
                 <input type="submit" value="Verzenden" onclick=createCandidate()>     
                 <br>
+                </form>
             </div>
        </div>
     </body>
