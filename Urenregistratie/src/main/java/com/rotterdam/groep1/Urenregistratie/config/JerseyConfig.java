@@ -5,7 +5,6 @@ import javax.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
-import com.rotterdam.groep1.Urenregistratie.api.AccountEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.KandidaatEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.TestclassEndpoint;
 
