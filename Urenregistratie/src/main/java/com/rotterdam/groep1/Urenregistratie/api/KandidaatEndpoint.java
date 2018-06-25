@@ -11,29 +11,28 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rotterdam.groep1.Urenregistratie.controller.TestclassService;
-import com.rotterdam.groep1.Urenregistratie.domein.Testclass;
+import com.rotterdam.groep1.Urenregistratie.controller.KandidaatService;
+import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 
-@Path("testclass")
+
+@Path("kandidaat")
 @Component
-public class TestclassEndpoint {
-
+public class KandidaatEndpoint {
 	@Autowired
-	TestclassService testclassService;
-
+	KandidaatService kandidaatService;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response toonAllen() {
-		Iterable<Testclass> tests = testclassService.geefAllen();
+		Iterable<Kandidaat> tests = kandidaatService.geefAllen();
 		return Response.ok(tests).build();
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response postTestclass(Testclass t){
-		Testclass result = testclassService.save(t);
+	public Response postAccount(Kandidaat d){
+		Kandidaat result = kandidaatService.save(d);
 		return Response.accepted(result.getId()).build();	
 	}
-	
 }
