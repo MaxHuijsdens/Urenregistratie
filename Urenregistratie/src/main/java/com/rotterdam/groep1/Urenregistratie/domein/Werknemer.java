@@ -9,7 +9,7 @@ public class Werknemer extends Account implements Overzicht {
 		return;
 	}
 	
-	public void checkKandidaat()
+	public void checkWerknemer()
 	{
 		return;
 	}
