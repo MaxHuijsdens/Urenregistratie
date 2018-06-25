@@ -18,7 +18,6 @@ public class KandidaatService {
 	}
 	
 	public Kandidaat save(Kandidaat t) {
-		System.out.println(t);
 		return kandidaatRepository.save(t);
 	}
 }
