@@ -3,23 +3,8 @@
         <meta charset="utf-8">
         <link rel=stylesheet href=css/UrenRegistratieMain.css>
         
-        <script src="jquery-3.3.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("#registreerKandidaatForm").submit(function(event) {
-                    event.preventDefault();
-                    alert("Je hebt op een button geklikt");
-                    var naam = $("#voornaamTextBox").val() + ' '+$("#achternaamTextBox").val();
-                    var email = $("#emailTextBox").val();
-                    var telefoon = $("#telefoonnummerTextBox").val();
-                    var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoon":"'+telefoon+'"}';
-                    var xhttp = new XMLHttpRequest();
-                    xhttp.open("POST", "http://localhost:8082/api/testclass", true);
-                    xhttp.setRequestHeader("Content-type", "application/json");
-                    xhttp.send(dataJson);
-                });
-            });
-        </script>
+        <script src="JavaScript/lib/jquery-3.3.1.min.js"></script>
+        <script src="JavaScript/maakKandidaat.js"> </script>
     </head>
     <body>
         <div class="menu">
