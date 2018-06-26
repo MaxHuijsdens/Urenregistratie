@@ -1,6 +1,6 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,16 +17,7 @@ public abstract class Account {
 	private String naam;
 	private String email;
 	private String wachtwoord;
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	private Kandidaat kandidaat;
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	private Contactpersoon contactpersoon;
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	private Werknemer werknemer;
-	
+
 	public long getId() {
 		return id;
 	}
@@ -51,26 +42,6 @@ public abstract class Account {
 	public void setWachtwoord(String wachtwoord) {
 		this.wachtwoord = wachtwoord;
 	}
-	public Kandidaat getKandidaat() {
-		return kandidaat;
-	}
-	public void setKandidaat(Kandidaat kandidaat) {
-		this.kandidaat = kandidaat;
-	}
-	public Contactpersoon getContactpersoon() {
-		return contactpersoon;
-	}
-	public void setContactpersoon(Contactpersoon contactpersoon) {
-		this.contactpersoon = contactpersoon;
-	}
-	public Werknemer getWerknemer() {
-		return werknemer;
-	}
-	public void setWerknemer(Werknemer werknemer) {
-		this.werknemer = werknemer;
-	}
-	
-	
 	
 
 }

@@ -1,10 +1,12 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -17,10 +19,18 @@ public class Kandidaat {
 	private String telefoonnummer;
 	private double Uurtarief;
 	
-	@OneToOne
-//	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
 	private Account account;
-
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
+	private Contactpersoon contactpersoon;
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
+	private Werkgever werkgever;
+	
 	long getId() {
 		return id;	}
 	public void setId(long id) {
@@ -43,6 +53,12 @@ public class Kandidaat {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	public Contactpersoon getContactpersoon() {
+		return contactpersoon;
+	}
+	public void setContactpersoon(Contactpersoon contactpersoon) {
+		this.contactpersoon = contactpersoon;
 	}
 	
 	

@@ -1,5 +1,8 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,13 +20,13 @@ public class Contactpersoon {
 	private String telefoonnummer;
 	private String afdeling;
 	
-	@OneToOne
+	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
 	private Account account;
 	
-	@OneToOne
-	private Werkgever werkgever;
-	
+	@OneToMany
+	private Set<Kandidaat> kandidaat;
+		
 	public String getTelefoonnummer() {
 		return telefoonnummer;
 	}
@@ -48,12 +51,17 @@ public class Contactpersoon {
 	public void setAccount(Account account) {
 		this.account = account;
 	}
-	public Werkgever getWerkgever() {
-		return werkgever;
+	public Set<Kandidaat> getKandidaat() {
+		return kandidaat;
 	}
-	public void setWerkgever(Werkgever werkgever) {
-		this.werkgever = werkgever;
+	public void setKandidaat(Set<Kandidaat> kandidaat) {
+		this.kandidaat = kandidaat;
 	}
 	
-
 }
+
+	
+
+	
+
+
