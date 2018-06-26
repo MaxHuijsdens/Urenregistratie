@@ -13,30 +13,24 @@
         
        <div class="slide-panel">
            <div class="infoContainer">
-               <div class="infoContainerTitle">
-                   Gegevens Medewerker:
-               </div>
-               <form id="registreerMedewerkerForm">
+               <form id="registreerWerknemerForm">
                 <table>
                     <tr>
-                        <td>
-                            Voornaam:
-                        </td>
-                        <td>
-                            <input type=text placeholder=Voornaam id=voornaamTextBox>
+                        <td colspan="2">
+                            Gegevens Werknemer:
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Achternaam:
+                            Naam:
                         </td>
                         <td>
-                            <input type=text placeholder=Achternaam id=achternaamTextBox>
+                            <input type=text placeholder=Naam id=naamTextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            Medewerker ID:
+                            Werknemer ID:
                         </td>
                         <td>
                             <input type="text" placeholder=12345678 id=idTextBox>
@@ -62,7 +56,7 @@
                 </table>
                 
                 <br>
-                <a class="returnLink" href="overzichtMedewerkers.html">
+                <a class="returnLink" href="overzichtWerknemers.html">
                         <input type="button" value="Ga Terug"> 
                 </a>    
                 <input type="submit" value="Verzenden" onclick=createCandidate()>     
