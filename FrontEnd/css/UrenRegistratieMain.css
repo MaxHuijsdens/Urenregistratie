@@ -65,7 +65,7 @@ li a {
     text-decoration: none;
     text-transform: lowercase;
 }
-li a:hover {
+li a:hover, .botRight:hover {
     background-color:#1a231c;
 }
 
@@ -124,4 +124,26 @@ tr:first-child{
     font-size: 16px;
     background-color: #0f1410;
     color: #bceb1b;
+}
+.botRight{
+    display: block;
+    font-family: "museo-sans",sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color:#f6a21c;
+    color:#bceb1b;
+    text-align: center;
+    text-decoration: none;
+    text-transform: lowercase;
+    border: none;
+    outline: none;
+    background:#0f1410;
+    margin-left: auto;
+    margin-right: auto;
+    padding:8px;
+    overflow: hidden;
+    height: 100%;
+}
+.botRightTable{
+    padding: 0px;
 }
