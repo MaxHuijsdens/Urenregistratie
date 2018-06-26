@@ -2,20 +2,25 @@
     <head>
         <meta charset="utf-8">
         <link rel=stylesheet href=css/UrenRegistratieMain.css>
-        <style>
-        </style>
+        <link rel=stylesheet href=css/DropDownMenu.css>
     </head>
     <body>
         <div class="menu">
-            <a href="beheerAccounts.html">
+            <a href="mijnOverzicht.html">
                 <img class="logoWT" src="images/logoWT.svg">
             </a>
             
             <ul class="menuList">
-                <li><a href="overzichtWerknemers.html">werknemers</a></li>
-                <li><a href="overzichtKandidaten.html">kandidaten</a></li>
-                <li><a href="overzichtBedrijven.html">bedrijven</a></li>
-                <li><a href="overzichtContactpersonen.html">Contactpersonen</a></li>
+                <li><a href="mijnOverzicht.html">mijn overzicht</a></li>
+                <li class="dropDown">
+                    <button class="dropButton">beheer accounts &#11167</button>
+                    <div class="dropDownContent">
+                        <a href="overzichtWerknemers.html">Werknemers</a>
+                        <a href="overzichtKandidaten.html">kandidaten</a>
+                        <a href="overzichtBedrijven.html">bedrijven</a>
+                        <a href="overzichtContactpersonen.html">Contactpersonen</a>
+                    </div>
+                </li>
             </ul>
         </div> 
         <div class="slide-panel">
@@ -89,7 +94,7 @@
                 <div class="infoContainerTitle">
                     <a href="maakContactpersoon.html">nieuw contactpersoon</a>
                     <br><br>
-                    <a href="beheerAccounts.html">ga terug</a>
+                    <a href="mijnOverzicht.html">ga terug</a>
                 </div>     
             </div>
         </div>       

@@ -2,27 +2,29 @@
     <head>
         <meta charset="utf-8">
         <link rel=stylesheet href=css/UrenRegistratieMain.css>
-        <style>
-            a{
-                color:#bceb1b;
-            }
-        </style>
+        <link rel=stylesheet href=css/DropDownMenu.css>
     </head>
     <body>
         <div class="menu">
-            <a href="beheerAccounts.html">
+            <a href="mijnOverzicht.html">
                 <img class="logoWT" src="images/logoWT.svg">
             </a>
             
             <ul class="menuList">
-                <li><a href="overzichtWerknemers.html">Werknemers</a></li>
-                <li><a href="overzichtKandidaten.html">kandidaten</a></li>
-                <li><a href="overzichtBedrijven.html">bedrijven</a></li>
-                <li><a href="overzichtContactpersonen.html">Contactpersonen</a></li>
+                <li><a href="mijnOverzicht.html">mijn overzicht</a></li>
+                <li class="dropDown">
+                    <button class="dropButton">beheer accounts &#11167</button>
+                    <div class="dropDownContent">
+                        <a href="overzichtWerknemers.html">Werknemers</a>
+                        <a href="overzichtKandidaten.html">kandidaten</a>
+                        <a href="overzichtBedrijven.html">bedrijven</a>
+                        <a href="overzichtContactpersonen.html">Contactpersonen</a>
+                    </div>
+                </li>
             </ul>
         </div> 
         <div class="slide-panel">
-            <H2>!!TO DO: Toon kandidaten hier!!</H2>
+            <H2>!!TO DO: Maak tabel functioneel naar backend!!</H2>
             <div class="infoContainer">
                 <table>
                     <tr>
@@ -95,11 +97,14 @@
                         </td>
                     </tr>
                 </table>
+                <br>   
+                <a class="gaTerug" href="mijnOverzicht.html">
+                    <input type="button" value="Ga Terug">
+                </a>
+                <a class="maakKandidaat" href="maakKandidaat.html">
+                        <input type="button" value="Nieuwe Kandidaat"> 
+                </a> 
                 <br>
-                <div class="infoContainerTitle">
-                    <a href="maakKandidaat.html">nieuwe kandidaat</a>
-                    <br><br>
-                    <a href="beheerAccounts.html">ga terug</a>
                 </div>     
             </div>
         </div>       
