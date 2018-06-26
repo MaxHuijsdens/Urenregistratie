@@ -7,7 +7,6 @@ $(document).ready(function(){
                 '<tr>'+
                 '<td>'+val.naam+'</td>' +
                 '<td>'+val.telnr+'</td>'+
-                '<td>'+val.id+'</td>'+
                 '<td>TO DO</td>'+
                 '<td>TO DO</td>'+
                 '<td>'+val.email+'</td>'+
