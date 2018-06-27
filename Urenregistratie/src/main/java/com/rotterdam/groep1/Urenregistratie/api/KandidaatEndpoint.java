@@ -24,7 +24,11 @@ public class KandidaatEndpoint {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response toonAllen() {
+		System.out.println("ik ben een endpoint");
 		Iterable<Kandidaat> tests = kandidaatService.geefAllen();
+		for (Kandidaat k : tests) {
+			System.out.println(k);
+		}
 		return Response.ok(tests).build();
 	}
 	
