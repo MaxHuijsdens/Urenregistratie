@@ -9,6 +9,7 @@ import com.rotterdam.groep1.Urenregistratie.api.KandidaatEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.TestclassEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.WerknemerEndpoint;
 import com.rotterdam.groep1.Urenregistratie.domein.Contactpersoon;
+import com.rotterdam.groep1.Urenregistratie.api.AdminEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.ContactpersoonEndpoint;
 
 @Component
@@ -21,6 +22,7 @@ public class JerseyConfig extends ResourceConfig {
 		//register(AccountEndpoint.class);
 		register(KandidaatEndpoint.class);
 		register(WerknemerEndpoint.class);
+		register(AdminEndpoint.class);
 		register(ContactpersoonEndpoint.class);
 	}
 }

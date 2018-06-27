@@ -21,4 +21,12 @@ public class KandidaatService {
 	public Kandidaat save(Kandidaat t) {
 		return kandidaatRepository.save(t);
 	}
+	
+	public Kandidaat getById(long id) {
+		return kandidaatRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		kandidaatRepository.deleteById(id);
+	}
 }

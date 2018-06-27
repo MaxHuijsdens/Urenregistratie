@@ -1,5 +1,7 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
-interface Overzicht {
-	void getOverzicht();
+import javax.ws.rs.core.Response;
+
+public interface Overzicht {
+	Response getOverzicht();
 }
