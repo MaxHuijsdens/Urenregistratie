@@ -5,7 +5,7 @@ $(document).ready(function(){
         var email = $("#emailTextBox").val();
         var dataJson = '{"naam":"'+naam+'", "email":"'+email+'"}';
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "http://localhost:8082/api/testclass", true);
+        xhttp.open("POST", "http://localhost:8082/api/werknemer", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(dataJson);
         alert(naam + " is toegevoegd.");

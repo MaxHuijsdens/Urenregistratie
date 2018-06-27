@@ -6,7 +6,7 @@ $(document).ready(function(){
             $('#kandidatenTable tr:first').after(
                 '<tr>'+
                 '<td>'+val.naam+'</td>' +
-                '<td>'+val.telnr+'</td>'+
+                '<td>'+val.telefoonnummer+'</td>'+
                 '<td>TO DO</td>'+
                 '<td>TO DO</td>'+
                 '<td>'+val.email+'</td>'+

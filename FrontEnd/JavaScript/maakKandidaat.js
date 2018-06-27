@@ -3,8 +3,8 @@ $(document).ready(function(){
         event.preventDefault();
         var naam = $("#naamTextBox").val();
         var email = $("#emailTextBox").val();
-        var telnr = $("#telefoonnummerTextBox").val();
-        var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telnr":"'+telnr+'"}';
+        var telefoonnummer = $("#telefoonnummerTextBox").val();
+        var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoonnummer":"'+telefoonnummer+'"}';
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", "http://localhost:8082/api/kandidaat", true);
         xhttp.setRequestHeader("Content-type", "application/json");
