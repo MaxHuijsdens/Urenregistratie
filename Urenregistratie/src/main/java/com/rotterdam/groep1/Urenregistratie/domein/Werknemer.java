@@ -1,22 +1,55 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Werknemer extends Account implements Overzicht {
-	public void keurGoed()
-	{
-		return;
-	}
+public class Werknemer {
 	
-	public void checkWerknemer()
-	{
-		return;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
+	private Account account;
+	
+	@ManyToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "Werknemer_fk", referencedColumnName = "id")
+	private Admin admin;
+
+	public long getId() {
+		return id;
 	}
 
-	@Override
-	public void getOverzicht() {
-		// TODO Auto-generated method stub
-		
+	public void setId(long id) {
+		this.id = id;
 	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
+	public Admin getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Admin admin) {
+		this.admin = admin;
+	}
+	
+	
+	
+	
+
 }
