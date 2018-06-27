@@ -65,7 +65,7 @@ li a {
     text-decoration: none;
     text-transform: lowercase;
 }
-li a:hover, .botRight:hover {
+li a:hover, .tableButton:hover , .verwijderButton:hover {
     background-color:#1a231c;
 }
 
@@ -125,7 +125,7 @@ tr:first-child{
     background-color: #0f1410;
     color: #bceb1b;
 }
-.botRight{
+.tableButton, .verwijderButton{
     display: block;
     font-family: "museo-sans",sans-serif;
     font-weight: 700;
@@ -144,6 +144,9 @@ tr:first-child{
     overflow: hidden;
     height: 100%;
 }
-.botRightTable{
+.tableButtonHolder{
     padding: 0px;
+}
+.verwijderButton{
+    width:100%;
 }
