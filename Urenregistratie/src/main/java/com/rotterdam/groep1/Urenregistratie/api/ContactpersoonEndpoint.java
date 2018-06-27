@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import com.rotterdam.groep1.Urenregistratie.controller.ContactpersoonService;
 import com.rotterdam.groep1.Urenregistratie.domein.Contactpersoon;
 
-@Path("testclass")
+@Path("contactpersoon")
 @Component
 public class ContactpersoonEndpoint {
 
