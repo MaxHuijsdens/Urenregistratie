@@ -1,6 +1,7 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
 import javax.persistence.CascadeType;
+import javax.ws.rs.core.Response;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Werknemer extends Account{
+public class Werknemer extends Account implements Overzicht {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,6 +35,11 @@ public class Werknemer extends Account{
 
 	public void setAdmin(Admin admin) {
 		this.admin = admin;
+	}
+
+	@Override
+	public Response getOverzicht() {
+		return null;
 	}
 	
 	
