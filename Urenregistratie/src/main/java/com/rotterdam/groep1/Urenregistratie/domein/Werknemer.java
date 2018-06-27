@@ -10,15 +10,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Werknemer {
+public class Werknemer extends Account{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
-	private Account account;
 	
 	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Werknemer_fk", referencedColumnName = "id")
@@ -30,14 +26,6 @@ public class Werknemer {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 
 	public Admin getAdmin() {
