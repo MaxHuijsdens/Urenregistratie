@@ -10,6 +10,8 @@ $(document).ready(function(){
                 '<td>'+val.email+'</td>'+
                 '<td></td>'+
                 '<td>'+val.afdeling+'</td>'+
+                '<td class="tableButtonHolder"><a class="wijzigButton" href="wijzigContactpersoon.html">&#9998;</a></td>' +
+                '<td class="tableButtonHolder"><input type="button" class="verwijderButton" value="&#10006;"></td>' +
                 '</tr>'
             );
             /*
