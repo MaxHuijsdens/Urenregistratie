@@ -31,8 +31,9 @@ public class Kandidaat {
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;
 	
-	long getId() {
-		return id;	}
+	public long getId() {
+		return id;	
+	}
 	public void setId(long id) {
 		this.id = id;
 	}
