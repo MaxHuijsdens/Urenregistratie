@@ -21,6 +21,6 @@ public class JerseyConfig extends ResourceConfig {
 		//register(AccountEndpoint.class);
 		register(KandidaatEndpoint.class);
 		register(WerknemerEndpoint.class);
-		register(Contactpersoon.class);
+		register(ContactpersoonEndpoint.class);
 	}
 }
