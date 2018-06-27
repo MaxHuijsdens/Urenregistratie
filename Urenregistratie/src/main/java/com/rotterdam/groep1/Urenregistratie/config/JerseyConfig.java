@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.rotterdam.groep1.Urenregistratie.api.KandidaatEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.TestclassEndpoint;
+import com.rotterdam.groep1.Urenregistratie.api.WerknemerEndpoint;
 
 @Component
 @ApplicationPath("/api")
@@ -17,5 +18,6 @@ public class JerseyConfig extends ResourceConfig {
 		register(TestclassEndpoint.class); 
 		//register(AccountEndpoint.class);
 		register(KandidaatEndpoint.class);
+		register(WerknemerEndpoint.class);
 	}
 }
