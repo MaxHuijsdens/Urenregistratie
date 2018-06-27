@@ -22,7 +22,7 @@ public class Contactpersoon {
 	
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
-	private Account account;
+	private Account account;  //delete
 	
 	@OneToMany
 	private Set<Kandidaat> kandidaat;

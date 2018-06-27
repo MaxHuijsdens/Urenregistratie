@@ -37,6 +37,6 @@ public class KandidaatEndpoint {
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response postAccount(Kandidaat d) {
 		Kandidaat result = kandidaatService.save(d);
-		return Response.accepted(result.getId()).build();
+	return Response.accepted(result.getId()).build();
 	}
 }
