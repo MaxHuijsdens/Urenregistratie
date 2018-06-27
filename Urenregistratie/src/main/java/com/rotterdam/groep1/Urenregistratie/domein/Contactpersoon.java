@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Contactpersoon extends Account{
 	private String telefoonnummer;
 	private String afdeling;
 	
-	@OneToMany
+	@OneToMany(fetch=FetchType.EAGER)
 	private Set<Kandidaat> kandidaat;
 		
 	public String getTelefoonnummer() {
@@ -41,6 +42,7 @@ public class Contactpersoon extends Account{
 	public void setId(long id) {
 		this.id = id;
 	}
+	
 	public Set<Kandidaat> getKandidaat() {
 
 		return kandidaat;
@@ -48,5 +50,6 @@ public class Contactpersoon extends Account{
 	public void setKandidaat(Set<Kandidaat> kandidaat) {
 		this.kandidaat = kandidaat;
 	}
+	
 	
 }

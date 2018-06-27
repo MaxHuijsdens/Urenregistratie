@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $.getJSON('http://localhost:8082/api/contactpersoon', function(data) {
-        //alert(data);
+        //alert(data); 
         $.each(data, function(key, val) {
-            
+           
             $('#contactpersonenTable tr:first').after(
                 '<tr>'+
                 '<td>'+val.naam+'</td>' +
