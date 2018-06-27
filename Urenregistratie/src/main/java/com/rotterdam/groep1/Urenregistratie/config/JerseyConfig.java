@@ -5,6 +5,7 @@ import javax.ws.rs.ApplicationPath;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
+import com.rotterdam.groep1.Urenregistratie.api.KandidaatEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.TestclassEndpoint;
 
 @Component
@@ -14,5 +15,7 @@ public class JerseyConfig extends ResourceConfig {
 		
 		//Hier registreer je je endpoints. Die moet daarna nog wel geïmporteerd worden.
 		register(TestclassEndpoint.class); 
+		//register(AccountEndpoint.class);
+		register(KandidaatEndpoint.class);
 	}
 }

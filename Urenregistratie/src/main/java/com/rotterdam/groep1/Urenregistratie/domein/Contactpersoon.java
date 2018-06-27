@@ -52,6 +52,7 @@ public class Contactpersoon {
 		this.account = account;
 	}
 	public Set<Kandidaat> getKandidaat() {
+
 		return kandidaat;
 	}
 	public void setKandidaat(Set<Kandidaat> kandidaat) {
@@ -59,9 +60,3 @@ public class Contactpersoon {
 	}
 	
 }
-
-	
-
-	
-
-
