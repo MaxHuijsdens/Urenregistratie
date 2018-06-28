@@ -30,46 +30,47 @@ public class WerknemerEndpoint implements Overzicht {
 	WerknemerService werknemerService;
 	
 	@Autowired
-	KandidaatService kandidaatService;
+	WerknemerService kandidaatService;
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOverzicht() { //De werknemer moet alle kandidaten in kunnen zien. Dit is de functie van onze interface.
-		Iterable<Kandidaat> kandidatenLijst = kandidaatService.geefAllen();
-		return Response.ok(kandidatenLijst).build();
+		Iterable<Werknemer> werknemerLijst = werknemerService.geefAllen();
+		return Response.ok(werknemerLijst).build();
 	}
 	
 	@POST
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response createKandidaat(Kandidaat k) {
-		return Response.ok(kandidaatService.save(k)).build();
+	public Response createWerknemer(Werknemer w) {
+		return Response.ok(werknemerService.save(w)).build();
 	}
-	
+	/*
 	@GET
 	@Path("/view/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getKandidaat(@PathParam("id")Long id){
-		Kandidaat k = kandidaatService.getById(id);
+		//Werknemer k = werknemerService.getById(id);
 		if(k != null) 
 			return Response.ok(k).build();
 		return Response.status(Status.NOT_FOUND).build();
 	}
-
-
+*/
+/*
 	@PUT
 	@Path("/edit/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat k){
-		if (kandidaatService.getById(id) == null)
+	public Response updateWerknemer(@PathParam("kid") Long id, Werknemer w){
+		if (werknemerService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();
 		
-		k.setId(id);
-		kandidaatService.save(k);
+		w.setId(id);
+		werknemerService.save(w);
 		
 		return Response.accepted("GELUKT!").build();
 	}
-
+	*/
+/*
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
@@ -82,5 +83,6 @@ public class WerknemerEndpoint implements Overzicht {
 		}
 		return Response.status(Status.NOT_FOUND).build();
 	}
+	*/
 }
 

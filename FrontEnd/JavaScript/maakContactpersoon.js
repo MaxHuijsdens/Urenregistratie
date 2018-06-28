@@ -7,7 +7,7 @@ $(document).ready(function(){
         var afdeling = $("#afdelingTextBox").val();
         var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoonnummer":"'+telefoonnummer+'", "afdeling":"'+afdeling+'"}';
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "http://localhost:8082/api/contactpersoon", true);
+        xhttp.open("POST", "http://localhost:8082/api/contactpersoon/create", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(dataJson);
         alert(naam + " is toegevoegd.");
