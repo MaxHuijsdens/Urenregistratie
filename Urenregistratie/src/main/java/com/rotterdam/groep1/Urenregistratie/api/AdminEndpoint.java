@@ -23,7 +23,7 @@ import com.rotterdam.groep1.Urenregistratie.domein.Werknemer;
 @Path("/admin")
 @Component
 public class AdminEndpoint extends WerknemerEndpoint {
-	
+	/*
 	@Autowired
 	WerknemerService werknemerService;
 	
@@ -69,5 +69,5 @@ public class AdminEndpoint extends WerknemerEndpoint {
 			return Response.noContent().build();
 		}
 		return Response.status(Status.NOT_FOUND).build();
-	}
+	}*/
 }
