@@ -7,7 +7,7 @@ $(document).ready(function(){
         var dataJson = '{"naam":"'+naam+'", "email":"'+email+'", "telefoonnummer":"'+telefoonnummer+'"}';
 		console.log(dataJson);
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "http://localhost:8082/api/werknemer/create", true);
+        xhttp.open("POST", "http://localhost:8082/api/kandidaat", true);
         xhttp.setRequestHeader("Content-type", "application/json");
         xhttp.send(dataJson);
         alert(naam + " is toegevoegd.");
