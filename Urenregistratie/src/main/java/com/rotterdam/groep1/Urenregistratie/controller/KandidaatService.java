@@ -1,5 +1,6 @@
 package com.rotterdam.groep1.Urenregistratie.controller;
 
+
 import javax.transaction.Transactional;
 
 import org.jvnet.hk2.annotations.Service;
@@ -20,4 +21,12 @@ public class KandidaatService {
 	public Kandidaat save(Kandidaat t) {
 		return kandidaatRepository.save(t);
 	}
+	
+	public Kandidaat findById(Long id) {
+        return this.kandidaatRepository.findById(id).orElse(null);
+    }
+	
+	public boolean existsById(Long id){
+        return this.kandidaatRepository.existsById(id);
+    }
 }

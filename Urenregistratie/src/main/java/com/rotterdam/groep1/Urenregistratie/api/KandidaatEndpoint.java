@@ -32,6 +32,19 @@ public class KandidaatEndpoint {
 		return Response.ok(tests).build();
 	}
 	
+	
+/*	@GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getKandidaatById(@PathParam("id") Long id){
+        if(this.kandidaatService.existsById(id)) {
+            Kandidaat employee = this.employeeWTService.findById(id);
+            return Response.ok(employee).build();
+        }
+        System.out.println("EmployeeWT id in GET not found!");
+        return Response.status(Status.NOT_FOUND).build();
+    }	*/
+	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
