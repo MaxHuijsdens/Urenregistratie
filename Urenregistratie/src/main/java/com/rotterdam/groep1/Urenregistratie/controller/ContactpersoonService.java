@@ -21,5 +21,12 @@ public class ContactpersoonService {
 		return contactpersoonRepository.save(t);
 	}
 	
+	public Contactpersoon getById(long id) {
+		return contactpersoonRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		contactpersoonRepository.deleteById(id);
+	}
 }
 
