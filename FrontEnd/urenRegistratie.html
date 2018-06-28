@@ -21,7 +21,6 @@
             </ul>
         </div> 
         <div class="slide-panel">
-            <H2>!!TO DO: Toon UrenRegistratie overzicht hier!!</H2>
 
             <select id=MaandSelectie name=Maand>
                 <option disabled>Kies Maand</option>
@@ -51,7 +50,7 @@
                 <option value="2010">2010</option>
             </select>
             
-            <table id="urenTabel">
+            <table class="urenTabel">
                 <tr>
                     <td>dag</td>
                     <td>1</td>
@@ -88,379 +87,385 @@
                 </tr>
                 <tr>
                     <td>standaard uren</td>
-                    <td><input type="number" placeholder=0 id=standaardUren1></td>
-                    <td><input type="number" placeholder=0 id=standaardUren2></td>
-                    <td><input type="number" placeholder=0 id=standaardUren3></td>
-                    <td><input type="number" placeholder=0 id=standaardUren4></td>
-                    <td><input type="number" placeholder=0 id=standaardUren5></td>
-                    <td><input type="number" placeholder=0 id=standaardUren6></td>
-                    <td><input type="number" placeholder=0 id=standaardUren7></td>
-                    <td><input type="number" placeholder=0 id=standaardUren8></td>
-                    <td><input type="number" placeholder=0 id=standaardUren9></td>
-                    <td><input type="number" placeholder=0 id=standaardUren10></td>
-                    <td><input type="number" placeholder=0 id=standaardUren11></td>
-                    <td><input type="number" placeholder=0 id=standaardUren12></td>
-                    <td><input type="number" placeholder=0 id=standaardUren13></td>
-                    <td><input type="number" placeholder=0 id=standaardUren14></td>
-                    <td><input type="number" placeholder=0 id=standaardUren15></td>
-                    <td><input type="number" placeholder=0 id=standaardUren16></td>
-                    <td><input type="number" placeholder=0 id=standaardUren17></td>
-                    <td><input type="number" placeholder=0 id=standaardUren18></td>
-                    <td><input type="number" placeholder=0 id=standaardUren19></td>
-                    <td><input type="number" placeholder=0 id=standaardUren20></td>
-                    <td><input type="number" placeholder=0 id=standaardUren21></td>
-                    <td><input type="number" placeholder=0 id=standaardUren22></td>
-                    <td><input type="number" placeholder=0 id=standaardUren23></td>
-                    <td><input type="number" placeholder=0 id=standaardUren24></td>
-                    <td><input type="number" placeholder=0 id=standaardUren25></td>
-                    <td><input type="number" placeholder=0 id=standaardUren26></td>
-                    <td><input type="number" placeholder=0 id=standaardUren27></td>
-                    <td><input type="number" placeholder=0 id=standaardUren28></td>
-                    <td><input type="number" placeholder=0 id=standaardUren29></td>
-                    <td><input type="number" placeholder=0 id=standaardUren30></td>
-                    <td><input type="number" placeholder=0 id=standaardUren31></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>overwerk 125%</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>overwerk 150%</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>overwerk 200%</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>ziekte</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>vakantie</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>feestdag</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>bijzonder verlof</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>kort verzuim</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>training</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
                 <tr>
                     <td>beschikbaar</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" placeholder=0 id=standaardUren1 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren2 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren3 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren4 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren5 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren6 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren7 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren8 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren9 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren10 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren11 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren12 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren13 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren14 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren15 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren16 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren17 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren18 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren19 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren20 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren21 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren22 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren23 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren24 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren25 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren26 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren27 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren28 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren29 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren30 min="0" max="24"></td>
+                    <td><input type="number" placeholder=0 id=standaardUren31 min="0" max="24"></td>
                 </tr>
-            </table>   
+            </table> 
+            
+            <a class="returnLink" href="mijnOverzicht.html">
+                    <input type="button" value="Ga Terug"> 
+            </a>    
+            <input type="submit" value="Verzenden">     
+            <br>  
         </div>              
     </body>
 </html>

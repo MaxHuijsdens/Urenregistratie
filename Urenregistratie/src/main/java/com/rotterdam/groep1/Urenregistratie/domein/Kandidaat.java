@@ -11,17 +11,13 @@ import javax.persistence.OneToOne;
 
 
 @Entity
-public class Kandidaat {
+public class Kandidaat extends Account{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String telefoonnummer;
 	private double Uurtarief;
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
-	private Account account;
 	
 	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
@@ -48,12 +44,6 @@ public class Kandidaat {
 	}
 	public void setUurtarief(double uurtarief) {
 		Uurtarief = uurtarief;
-	}
-	public Account getAccount() {
-		return account;
-	}
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 	public Contactpersoon getContactpersoon() {
 		return contactpersoon;

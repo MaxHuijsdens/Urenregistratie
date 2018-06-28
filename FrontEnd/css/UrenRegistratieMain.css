@@ -157,5 +157,16 @@ tr:first-child{
     padding-left: 0;
     padding-right: 0;
     width:100%;
+}
 
+input[type=number]{
+    -moz-appearance:textfield;
+    width: 30px;
+} 
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button, { 
+  -webkit-appearance: textfield; 
+  margin: 0; 
+  width: 30px;
 }
