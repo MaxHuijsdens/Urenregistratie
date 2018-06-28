@@ -41,9 +41,4 @@ public class Werknemer extends Account implements Overzicht {
 	public Response getOverzicht() {
 		return null;
 	}
-	
-	
-	
-	
-
 }
