@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.getJSON('http://localhost:8082/api/kandidaat', function(data) {
+    $.getJSON('http://localhost:8082/api/werknemer', function(data) {
         //alert(data);
         $.each(data, function(key, val) {
             

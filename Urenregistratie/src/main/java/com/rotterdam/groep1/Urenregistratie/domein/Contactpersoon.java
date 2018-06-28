@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Contactpersoon {
+public class Contactpersoon extends Account{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,11 +21,15 @@ public class Contactpersoon {
 	private String telefoonnummer;
 	private String afdeling;
 	
+<<<<<<< HEAD
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
 	private Account account;  //delete
 	
 	@OneToMany
+=======
+	@OneToMany(fetch=FetchType.EAGER)
+>>>>>>> master
 	private Set<Kandidaat> kandidaat;
 		
 	public String getTelefoonnummer() {
@@ -45,12 +50,7 @@ public class Contactpersoon {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public Account getAccount() {
-		return account;
-	}
-	public void setAccount(Account account) {
-		this.account = account;
-	}
+	
 	public Set<Kandidaat> getKandidaat() {
 
 		return kandidaat;
@@ -58,5 +58,6 @@ public class Contactpersoon {
 	public void setKandidaat(Set<Kandidaat> kandidaat) {
 		this.kandidaat = kandidaat;
 	}
+	
 	
 }

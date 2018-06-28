@@ -2,13 +2,14 @@ package com.rotterdam.groep1.Urenregistratie.controller;
 
 import javax.transaction.Transactional;
 
-import org.jvnet.hk2.annotations.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 
-@Component
+@Service
+@Transactional
 public class KandidaatService {
 	@Autowired
 	KandidaatRepository kandidaatRepository;
@@ -19,5 +20,13 @@ public class KandidaatService {
 	
 	public Kandidaat save(Kandidaat t) {
 		return kandidaatRepository.save(t); //kandidaat / account
+	}
+	
+	public Kandidaat getById(long id) {
+		return kandidaatRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		kandidaatRepository.deleteById(id);
 	}
 }
