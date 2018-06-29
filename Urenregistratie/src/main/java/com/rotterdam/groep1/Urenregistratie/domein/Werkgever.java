@@ -27,7 +27,6 @@ public class Werkgever {
 	@OneToMany
 	private Set<Kandidaat> kandidaat;
 
-	
 	public long getId() {
 		return id;
 	}
