@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.ws.rs.core.Response;
@@ -22,8 +23,13 @@ public class Contactpersoon extends Account implements Overzicht{
 	private String telefoonnummer;
 	private String afdeling;
 	
-	@OneToMany(fetch=FetchType.EAGER)
-	private Set<Kandidaat> kandidaat;
+//	@OneToMany(fetch=FetchType.EAGER)
+//	private Set<Kandidaat> kandidaat;
+	
+	@ManyToOne
+	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
+	private Werkgever werkgever;
+	
 		
 	public String getTelefoonnummer() {
 		return telefoonnummer;
@@ -44,12 +50,12 @@ public class Contactpersoon extends Account implements Overzicht{
 		this.id = id;
 	}
 	
-	public Set<Kandidaat> getKandidaat() {
-		return kandidaat;
-	}
-	public void setKandidaat(Set<Kandidaat> kandidaat) {
-		this.kandidaat = kandidaat;
-	}
+//	public Set<Kandidaat> getKandidaat() {
+//		return kandidaat;
+//	}
+//	public void setKandidaat(Set<Kandidaat> kandidaat) {
+//		this.kandidaat = kandidaat;
+//	}
 	@Override
 	public Response getOverzicht() {
 		return null;
