@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.ws.rs.core.Response;
@@ -22,15 +23,18 @@ public class Contactpersoon extends Account implements Overzicht{
 	private String telefoonnummer;
 	private String afdeling;
 	
-<<<<<<< HEAD
+	
+	@ManyToOne
+	//@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
+	private Werkgever werkgever;
+	
+
 	@OneToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
 	private Account account;  //delete
 	
-	@OneToMany
-=======
 	@OneToMany(fetch=FetchType.EAGER)
->>>>>>> master
+
 	private Set<Kandidaat> kandidaat;
 		
 	public String getTelefoonnummer() {

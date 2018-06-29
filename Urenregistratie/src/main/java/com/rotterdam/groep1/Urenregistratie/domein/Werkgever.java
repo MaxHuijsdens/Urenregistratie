@@ -20,9 +20,8 @@ public class Werkgever {
 	private String adres;
 	
 	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
-	private Contactpersoon contactpersoon;
+	@OneToMany (cascade = CascadeType.ALL)
+	private List<Contactpersoon> contactpersoon;
 	
 	@OneToMany
 	private Set<Kandidaat> kandidaat;
@@ -45,10 +44,10 @@ public class Werkgever {
 	public void setAdres(String adres) {
 		this.adres = adres;
 	}
-	public Contactpersoon getContactpersoon() {
+	public List<Contactpersoon> getContactpersoon() {
 		return contactpersoon;
 	}
-	public void setContactpersoon(Contactpersoon contactpersoon) {
+	public void setContactpersoon(List<Contactpersoon> contactpersoon) {
 		this.contactpersoon = contactpersoon;
 	}
 	public Set<Kandidaat> getKandidaat() {
