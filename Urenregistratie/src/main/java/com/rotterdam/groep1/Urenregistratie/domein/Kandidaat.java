@@ -23,7 +23,7 @@ public class Kandidaat extends Account{
 	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
 	private Contactpersoon contactpersoon;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne //mappedBy
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;
 	
