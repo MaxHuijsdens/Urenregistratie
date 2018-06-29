@@ -17,7 +17,7 @@ public class Werknemer extends Account implements Overzicht {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn (name = "Werknemer_fk", referencedColumnName = "id")
 	private Admin admin;
 
@@ -41,9 +41,4 @@ public class Werknemer extends Account implements Overzicht {
 	public Response getOverzicht() {
 		return null;
 	}
-	
-	
-	
-	
-
 }

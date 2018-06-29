@@ -16,9 +16,7 @@ import javax.ws.rs.core.Response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rotterdam.groep1.Urenregistratie.controller.KandidaatService;
 import com.rotterdam.groep1.Urenregistratie.controller.WerknemerService;
-import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 import com.rotterdam.groep1.Urenregistratie.domein.Werknemer;
 
 import com.rotterdam.groep1.Urenregistratie.domein.Overzicht;
@@ -27,60 +25,57 @@ import com.rotterdam.groep1.Urenregistratie.domein.Overzicht;
 @Component
 public class WerknemerEndpoint implements Overzicht {
 	@Autowired
-	WerknemerService werknemerService;
-	
-	@Autowired
-	KandidaatService kandidaatService;
+	WerknemerService werknemerService;	
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOverzicht() { //De werknemer moet alle kandidaten in kunnen zien. Dit is de functie van onze interface.
-		Iterable<Kandidaat> kandidatenLijst = kandidaatService.geefAllen();
-		return Response.ok(kandidatenLijst).build();
+		Iterable<Werknemer> werknemerLijst = werknemerService.geefAllen();
+		return Response.ok(werknemerLijst).build();
+	}	
+	
+	@GET
+	@Path("/viewWerknemer/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getKandidaat(@PathParam("id")Long id){
+		Werknemer k = werknemerService.getById(id);
+		if(k != null) 
+			return Response.ok(k).build();
+		return Response.status(Status.NOT_FOUND).build();
 	}
 	
 	@POST
 	@Path("/create")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response createKandidaat(Kandidaat k) {
-		return Response.ok(kandidaatService.save(k)).build();
-	}
-	
-	@GET
-	@Path("/view/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response getKandidaat(@PathParam("id")Long id){
-		Kandidaat k = kandidaatService.getById(id);
-		if(k != null) 
-			return Response.ok(k).build();
-		return Response.status(Status.NOT_FOUND).build();
-	}
-
+	public Response createWerknemer(Werknemer w) {
+		return Response.ok(werknemerService.save(w)).build();
+	}		
 
 	@PUT
-	@Path("/edit/{kid}")
+	@Path("/editWerknemer/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat k){
-		if (kandidaatService.getById(id) == null)
+	public Response updateWerknemer(@PathParam("kid") Long id, Werknemer k){
+		if (werknemerService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();
 		
 		k.setId(id);
-		kandidaatService.save(k);
+		werknemerService.save(k);
 		
 		return Response.accepted("GELUKT!").build();
 	}
-
+	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/delete")
-	public Response deleteKandidaat(@QueryParam("id") Long id) {
-		Kandidaat k = kandidaatService.getById(id);
+	@Path("/deleteWerknemer")
+	public Response deleteWerknemer(@QueryParam("id") Long id) {
+		Werknemer k = werknemerService.getById(id);
 		System.out.println(k);
 		if (k != null) {
-			kandidaatService.deleteById(id);
+			werknemerService.deleteById(id);
 			return Response.noContent().build();
 		}
 		return Response.status(Status.NOT_FOUND).build();
-	}
+	}	
+	
 }
 

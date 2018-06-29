@@ -23,5 +23,12 @@ public class ContactpersoonService {
 		//test
 	}
 	
+	public Contactpersoon getById(long id) {
+		return contactpersoonRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		contactpersoonRepository.deleteById(id);
+	}
 }
 
