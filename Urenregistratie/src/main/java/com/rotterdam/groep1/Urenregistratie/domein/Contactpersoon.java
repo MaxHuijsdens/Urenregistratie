@@ -11,9 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.ws.rs.core.Response;
 
 @Entity
-public class Contactpersoon extends Account{
+public class Contactpersoon extends Account implements Overzicht{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,11 +45,14 @@ public class Contactpersoon extends Account{
 	}
 	
 	public Set<Kandidaat> getKandidaat() {
-
 		return kandidaat;
 	}
 	public void setKandidaat(Set<Kandidaat> kandidaat) {
 		this.kandidaat = kandidaat;
+	}
+	@Override
+	public Response getOverzicht() {
+		return null;
 	}
 	
 	

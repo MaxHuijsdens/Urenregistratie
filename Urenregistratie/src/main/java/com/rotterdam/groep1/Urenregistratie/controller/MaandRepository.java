@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 
 @Component
-public interface KandidaatRepository extends CrudRepository<Kandidaat, Long> {
+public interface MaandRepository extends CrudRepository<Kandidaat, Long> {
 	
 }
