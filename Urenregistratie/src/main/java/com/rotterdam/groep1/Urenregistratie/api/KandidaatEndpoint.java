@@ -1,11 +1,13 @@
 package com.rotterdam.groep1.Urenregistratie.api;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -32,8 +34,7 @@ public class KandidaatEndpoint {
 			System.out.println(k);
 		}
 		return Response.ok(tests).build();
-	}
-	
+	}	
 	
 	@GET
     @Path("{id}")
@@ -45,7 +46,7 @@ public class KandidaatEndpoint {
         }
         System.out.println("Kandidaat id in GET niet gevonden!");
         return Response.status(Status.NOT_FOUND).build();
-    }	
+    }		
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -54,4 +55,18 @@ public class KandidaatEndpoint {
 		Kandidaat result = kandidaatService.save(d);
 		return Response.accepted(result.getId()).build();
 	}
+	
+	@DELETE
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/delete")
+	public Response deleteKandidaat(@QueryParam("id") Long id) {
+		Kandidaat k = kandidaatService.getById(id);
+		System.out.println(k);
+		if (k != null) {
+			kandidaatService.deleteById(id);
+			return Response.noContent().build();
+		}
+		return Response.status(Status.NOT_FOUND).build();
+	}	
+	
 }

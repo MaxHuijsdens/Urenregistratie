@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rotterdam.groep1.Urenregistratie.domein.Admin;
+import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 import com.rotterdam.groep1.Urenregistratie.domein.Werknemer;
 
 
@@ -19,9 +20,9 @@ public class AdminService {
 		return adminRepository.findAll();
 	}
 	
-	public void save(Admin admin) {
-		adminRepository.save(admin);
-	}
+	public Admin save(Admin admin) {
+		return adminRepository.save(admin);
+	}	
 	
 	public void delete(Admin admin) {
 		adminRepository.delete(admin);
