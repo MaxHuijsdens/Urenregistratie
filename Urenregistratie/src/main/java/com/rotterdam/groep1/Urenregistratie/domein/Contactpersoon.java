@@ -23,19 +23,10 @@ public class Contactpersoon extends Account implements Overzicht{
 	private String telefoonnummer;
 	private String afdeling;
 	
-	
 	@ManyToOne
-	//@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
+	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;
 	
-
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "Account_fk", referencedColumnName = "id")
-	private Account account;  //delete
-	
-	@OneToMany(fetch=FetchType.EAGER)
-
-	private Set<Kandidaat> kandidaat;
 		
 	public String getTelefoonnummer() {
 		return telefoonnummer;
@@ -55,13 +46,7 @@ public class Contactpersoon extends Account implements Overzicht{
 	public void setId(long id) {
 		this.id = id;
 	}
-	
-	public Set<Kandidaat> getKandidaat() {
-		return kandidaat;
-	}
-	public void setKandidaat(Set<Kandidaat> kandidaat) {
-		this.kandidaat = kandidaat;
-	}
+
 	@Override
 	public Response getOverzicht() {
 		return null;

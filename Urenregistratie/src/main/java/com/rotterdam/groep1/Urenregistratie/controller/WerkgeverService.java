@@ -21,4 +21,20 @@ public class WerkgeverService {
 		return werkgeverRepository.save(t);
 	}
 	
+	public Werkgever findById(Long id) {
+        return this.werkgeverRepository.findById(id).orElse(null);
+    }
+	
+	public boolean existsById(Long id){
+        return this.werkgeverRepository.existsById(id);
+	}
+	
+	public Werkgever getById(long id) {
+		return werkgeverRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		werkgeverRepository.deleteById(id);
+	}
+	
 }

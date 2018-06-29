@@ -4,6 +4,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -49,11 +50,23 @@ public class KandidaatEndpoint {
     }		
 	
 	@POST
+	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response postAccount(Kandidaat d) {
 		Kandidaat result = kandidaatService.save(d);
 	return Response.accepted(result.getId()).build();
+	}
+	
+	@PUT
+	@Path("/edit/{kid}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat c){
+		if (kandidaatService.getById(id) == null)
+			return Response.status(Status.NOT_FOUND).build();		
+		c.setId(id);
+		kandidaatService.save(c);		
+		return Response.accepted("GELUKT!").build();
 	}
 	
 	@DELETE

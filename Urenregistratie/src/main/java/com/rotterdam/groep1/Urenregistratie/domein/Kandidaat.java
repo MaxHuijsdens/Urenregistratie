@@ -1,7 +1,5 @@
 package com.rotterdam.groep1.Urenregistratie.domein;
 
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.ws.rs.core.Response;
 
 
@@ -31,9 +27,7 @@ public class Kandidaat extends Account implements Overzicht{
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;
 	
-	@OneToMany (mappedBy = "kandidaat")
-	private Set<Werkdag> werkdag;
-	
+
 	public long getId() {
 		return id;	
 	}
@@ -64,12 +58,7 @@ public class Kandidaat extends Account implements Overzicht{
 	public void setWerkgever(Werkgever werkgever) {
 		this.werkgever = werkgever;
 	}
-	public Set<Werkdag> getWerkdag() {
-		return werkdag;
-	}
-	public void setWerkdag(Set<Werkdag> werkdag) {
-		this.werkdag = werkdag;
-	}
+
 	@Override
 	public Response getOverzicht() {
 		return null;
