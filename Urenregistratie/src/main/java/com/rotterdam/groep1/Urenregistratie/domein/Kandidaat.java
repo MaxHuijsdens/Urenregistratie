@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,8 @@ public class Kandidaat extends Account implements Overzicht{
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;
 	
-	@OneToMany (mappedBy = "kandidaat")
+	
+	@OneToMany (mappedBy = "kandidaat", fetch=FetchType.EAGER)
 	private Set<Werkdag> werkdag;
 	
 	public long getId() {
