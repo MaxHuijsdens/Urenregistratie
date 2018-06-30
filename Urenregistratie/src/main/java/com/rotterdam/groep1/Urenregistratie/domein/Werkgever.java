@@ -17,14 +17,6 @@ public class Werkgever {
 	private String naam;
 	private String adres;
 	
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
-	private Contactpersoon contactpersoon;
-	
-	@OneToMany
-	private Set<Kandidaat> kandidaat;
-
 	public long getId() {
 		return id;
 	}
@@ -43,18 +35,8 @@ public class Werkgever {
 	public void setAdres(String adres) {
 		this.adres = adres;
 	}
-	public Contactpersoon getContactpersoon() {
-		return contactpersoon;
-	}
-	public void setContactpersoon(Contactpersoon contactpersoon) {
-		this.contactpersoon = contactpersoon;
-	}
-	public Set<Kandidaat> getKandidaat() {
-		return kandidaat;
-	}
-	public void setKandidaat(Set<Kandidaat> kandidaat) {
-		this.kandidaat = kandidaat;
-	}
+
+
 	
 	
 	
