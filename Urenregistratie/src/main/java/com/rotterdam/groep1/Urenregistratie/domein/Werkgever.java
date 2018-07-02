@@ -22,8 +22,8 @@ public class Werkgever {
 	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
 	private Contactpersoon contactpersoon;
 	
-	@OneToMany
-	private Set<Kandidaat> kandidaat;
+//	@OneToMany
+//	private Set<Kandidaat> kandidaat;
 
 	public long getId() {
 		return id;
@@ -49,12 +49,12 @@ public class Werkgever {
 	public void setContactpersoon(Contactpersoon contactpersoon) {
 		this.contactpersoon = contactpersoon;
 	}
-	public Set<Kandidaat> getKandidaat() {
+/*	public Set<Kandidaat> getKandidaat() {
 		return kandidaat;
 	}
 	public void setKandidaat(Set<Kandidaat> kandidaat) {
 		this.kandidaat = kandidaat;
-	}
+	}	*/
 	
 	
 	
