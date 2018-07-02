@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.ws.rs.core.Response;
 
@@ -24,8 +26,14 @@ public class Maand {
 	private goedKeuring verzendenWerknemer;
 	private goedKeuring verzendenContactpersoon;
 	
+	
+	@ManyToOne
+	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
+	private Kandidaat kandidaat;
+	
 	@OneToMany (mappedBy = "maand")
 	private Set<Werkdag> werkdag;
+	
 	
 	public long getId() {
 		return id;
@@ -73,6 +81,16 @@ public class Maand {
 	public goedKeuring getVerzendenWerknemer() {
 		return verzendenWerknemer;
 	}
+	
+	public Kandidaat getKandidaat() {
+		return kandidaat;
+	}
+
+	public void setKandidaat(Kandidaat kandidaat) {
+		this.kandidaat = kandidaat;
+	}
+	
+	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {
 		this.verzendenWerknemer = verzendenWerknemer;
 		if (verzendenWerknemer == goedKeuring.AFGEKEURD)
@@ -99,7 +117,6 @@ public class Maand {
 	
 	}	
 	
-
 enum goedKeuring{
 	GOEDGEKEURD,
 	AFGEKEURD,
