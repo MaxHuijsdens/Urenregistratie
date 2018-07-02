@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
+import com.rotterdam.groep1.Urenregistratie.domein.Werkdag;
+import com.rotterdam.groep1.Urenregistratie.domein.Werkgever;
 
 
 @Service
@@ -14,7 +16,7 @@ public class WerkdagService {
 	@Autowired
 	WerkdagRepository werkdagRepository;
 	
-	public Iterable<Kandidaat> geefAllen() {
+	public Iterable<Werkdag> geefAllen() {
 		return werkdagRepository.findAll();
 	}
 		

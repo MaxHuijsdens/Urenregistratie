@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 import com.rotterdam.groep1.Urenregistratie.api.KandidaatEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.TestclassEndpoint;
+import com.rotterdam.groep1.Urenregistratie.api.WerkdagEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.WerkgeverEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.WerknemerEndpoint;
-import com.rotterdam.groep1.Urenregistratie.domein.Contactpersoon;
 import com.rotterdam.groep1.Urenregistratie.api.AdminEndpoint;
 import com.rotterdam.groep1.Urenregistratie.api.ContactpersoonEndpoint;
 
@@ -26,5 +26,6 @@ public class JerseyConfig extends ResourceConfig {
 		register(AdminEndpoint.class);
 		register(ContactpersoonEndpoint.class);
 		register(WerkgeverEndpoint.class);
+		register(WerkdagEndpoint.class);
 	}
 }
