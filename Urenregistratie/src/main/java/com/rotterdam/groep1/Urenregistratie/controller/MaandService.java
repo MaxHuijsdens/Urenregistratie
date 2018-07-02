@@ -15,7 +15,7 @@ public class MaandService {
 	@Autowired
 	MaandRepository maandRepository;
 	
-	public Iterable<Kandidaat> geefAllen() {
+	public Iterable<Maand> geefAllen() {
 		return maandRepository.findAll();
 	}
 }
