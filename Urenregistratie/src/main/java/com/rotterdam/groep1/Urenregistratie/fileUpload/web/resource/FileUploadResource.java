@@ -65,7 +65,6 @@ public class FileUploadResource  {
 	        result.add(fileUploadHandler.handle(fileUploadRequest));
     	}
     	
-        // Create the HttpFile:
     		
         return Response
                 .status(200)

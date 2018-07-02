@@ -18,7 +18,15 @@ public class Kandidaat extends Account implements Overzicht{
 	private long id;
 	private String telefoonnummer;
 	private double Uurtarief;
+	private String pasfotoUrl;
 	
+	public String getPasfotoUrl() {
+		return pasfotoUrl;
+	}
+	public void setPasfotoUrl(String pasfotoUrl) {
+		this.pasfotoUrl = pasfotoUrl;
+	}
+
 	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
 	private Contactpersoon contactpersoon;
