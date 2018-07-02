@@ -32,7 +32,7 @@ public class Maand {
 	private Kandidaat kandidaat;	
 	
 	@OneToMany (mappedBy = "maand")
-	private Set<Werkdag> werkdag;
+	private Set<Werkdag> werkdag;	
 	
 	
 	public long getId() {
