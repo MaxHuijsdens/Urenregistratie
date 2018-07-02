@@ -23,9 +23,7 @@ public class Werkdag {
 	@JoinColumn (name = "Maand_fk", referencedColumnName = "id")
 	private Maand maand;
 	
-	@ManyToOne
-	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;
+	
 	
 
 	public long getId() {
@@ -84,13 +82,7 @@ public class Werkdag {
 		this.maand = maand;
 	}
 
-	public Kandidaat getKandidaat() {
-		return kandidaat;
-	}
 
-	public void setKandidaat(Kandidaat kandidaat) {
-		this.kandidaat = kandidaat;
-	}
 	
 	
 }
