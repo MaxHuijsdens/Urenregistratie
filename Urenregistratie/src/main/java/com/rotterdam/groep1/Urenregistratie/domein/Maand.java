@@ -29,7 +29,7 @@ public class Maand {
 	
 	@ManyToOne
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;
+	private Kandidaat kandidaat;	
 	
 	@OneToMany (mappedBy = "maand")
 	private Set<Werkdag> werkdag;
@@ -88,7 +88,7 @@ public class Maand {
 
 	public void setKandidaat(Kandidaat kandidaat) {
 		this.kandidaat = kandidaat;
-	}
+	}	
 	
 	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {
