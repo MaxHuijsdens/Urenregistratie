@@ -45,14 +45,16 @@ public class LocalStorageFileUploadHandler implements IFileUploadHandler {
         //String targetFileName = UUID.randomUUID().toString();
         String targetFileName = request.getHttpFile().getSubmittedFileName();
         // Write it to Disk:
-        internalWriteFile(httpFile.getStream(), targetFileName);
+        internalWriteFile(httpFile.getStream(), targetFileName, httpFile);
 
         return new FileUploadResponse(targetFileName);
     }
 
-    private void internalWriteFile(InputStream stream, String fileName) {
+    private void internalWriteFile(InputStream stream, String fileName, HttpFile file) {
         try {
             Files.copy(stream, Paths.get(rootPathProvider.getRootPath(), fileName));
+            
+            file.setFilePath(Paths.get(rootPathProvider.getRootPath()+"/"+fileName));
         } catch(Exception e) {
             throw new FileUploadException(new ServiceError("storingFileError", "Error writing file"), String.format("Writing File '%s' failed", fileName), e);
         }

@@ -1,6 +1,7 @@
 package com.rotterdam.groep1.Urenregistratie.fileUpload.model.files;
 
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.Map;
 
 import org.apache.commons.io.FilenameUtils;
@@ -11,8 +12,19 @@ public class HttpFile {
     private final long size;
     private final Map<String, String> parameters;
     private final InputStream stream;
+    private Path filePath;
 
-    public HttpFile( String submittedFileName, long size, Map<String, String> parameters, InputStream stream) {
+    public Path getFilePath() {
+		return filePath;
+	}
+
+
+	public void setFilePath(Path path) {
+		this.filePath = path;
+	}
+
+
+	public HttpFile( String submittedFileName, long size, Map<String, String> parameters, InputStream stream) {
         this.submittedFileName = submittedFileName;
         this.size = size;
         this.parameters = parameters;
