@@ -19,7 +19,7 @@ public class KandidaatService {
 	}
 	
 	public Kandidaat save(Kandidaat t) {
-		return kandidaatRepository.save(t);
+		return kandidaatRepository.save(t); //kandidaat / account
 	}
 	
 	public Kandidaat findById(Long id) {
