@@ -80,7 +80,7 @@ public class Werkdag {
 
 	public void setMaand(Maand maand) {
 		this.maand = maand;
-	}
+	}	
 
 
 	
