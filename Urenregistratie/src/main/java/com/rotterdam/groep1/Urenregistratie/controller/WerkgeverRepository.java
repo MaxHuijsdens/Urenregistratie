@@ -7,4 +7,7 @@ import com.rotterdam.groep1.Urenregistratie.domein.Werkgever;
 @Component
 public interface WerkgeverRepository extends CrudRepository<Werkgever, Long>{
 
+	
+	
+	
 }
