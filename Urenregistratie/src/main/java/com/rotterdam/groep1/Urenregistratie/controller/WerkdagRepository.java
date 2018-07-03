@@ -13,4 +13,7 @@ import com.rotterdam.groep1.Urenregistratie.domein.Werkdag;
 @Component
 public interface WerkdagRepository extends CrudRepository<Werkdag, Long> {
 	
+
+
+	
 }
