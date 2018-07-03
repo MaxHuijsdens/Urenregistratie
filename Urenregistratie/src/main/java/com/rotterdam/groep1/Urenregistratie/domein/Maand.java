@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.ws.rs.core.Response;
+
 
 @Entity
 public class Maand {
@@ -33,8 +33,8 @@ public class Maand {
 	private Kandidaat kandidaat;	
 	
 	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
+
 	private Set<Werkdag> werkdag;	
-	
 	
 	public long getId() {
 		return id;
@@ -72,6 +72,7 @@ public class Maand {
 	public void setCommentContactpersoon(String commentContactpersoon) {
 		this.commentContactpersoon = commentContactpersoon;
 	}
+
 	public Set<Werkdag> getWerkdag() {
 		return werkdag;
 	}
@@ -123,8 +124,3 @@ enum goedKeuring{
 	AFGEKEURD,
 	ONBEPAALD;
 }
-	
-
-
-	
-
