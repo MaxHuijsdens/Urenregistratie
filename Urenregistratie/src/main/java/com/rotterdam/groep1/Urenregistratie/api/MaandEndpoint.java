@@ -16,69 +16,70 @@ import javax.ws.rs.core.Response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rotterdam.groep1.Urenregistratie.controller.WerkdagService;
-import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
-import com.rotterdam.groep1.Urenregistratie.domein.Testclass;
-import com.rotterdam.groep1.Urenregistratie.domein.Werkdag;
+import com.rotterdam.groep1.Urenregistratie.controller.MaandService;
+import com.rotterdam.groep1.Urenregistratie.domein.Maand;
 
-@Path("werkdag")
+
+@Path("maand")
 @Component
-public class WerkdagEndpoint {
-
+public class MaandEndpoint {
 	@Autowired
-	WerkdagService werkdagService;
-
+	MaandService maandService;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response toonAllen() {
-		Iterable<Werkdag> wd = werkdagService.geefAllen();
-		return Response.ok(wd).build();
-	}
+		System.out.println("ik ben een endpoint");
+		Iterable<Maand> tests = maandService.geefAllen();
+		for (Maand m : tests) {
+			System.out.println(m);
+		}
+		return Response.ok(tests).build();
+	}	
 	
-/*	@GET
+	@GET
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getKandidaatById(@PathParam("id") Long id){
-        if(this.kandidaatService.existsById(id)) {
-            Kandidaat kandidaat = this.kandidaatService.findById(id);
-            return Response.ok(kandidaat).build();
+        if(this.maandService.existsById(id)) {
+            Maand maand = this.maandService.findById(id);
+            return Response.ok(maand).build();
         }
-        System.out.println("Kandidaat id in GET niet gevonden!");
+        System.out.println("Maand id in GET niet gevonden!");
         return Response.status(Status.NOT_FOUND).build();
-    }	*/
+    }		
 	
 	@POST
 	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response postWerkdag(Werkdag t){
-		Werkdag result = werkdagService.save(t);
-		return Response.accepted(result.getId()).build();	
-	}	
+	public Response postMaand(Maand m) {
+		Maand result = maandService.save(m);
+	return Response.accepted(result.getId()).build();
+	}
 	
 	@PUT
-	@Path("/edit/{wid}")
+	@Path("/edit/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateWerkdag(@PathParam("wid") Long id, Werkdag c){
-		if (werkdagService.getById(id) == null)
+	public Response updateMaand(@PathParam("kid") Long id, Maand c){
+		if (maandService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();		
 		c.setId(id);
-		werkdagService.save(c);		
+		maandService.save(c);		
 		return Response.accepted("GELUKT!").build();
 	}
 	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
-	public Response deleteWerkdag(@QueryParam("id") Long id) {
-		Werkdag w = werkdagService.getById(id);
-		System.out.println(w);
-		if (w != null) {
-			werkdagService.deleteById(id);
+	public Response deleteMaand(@QueryParam("id") Long id) {
+		Maand k = maandService.getById(id);
+		System.out.println(k);
+		if (k != null) {
+			maandService.deleteById(id);
 			return Response.noContent().build();
 		}
 		return Response.status(Status.NOT_FOUND).build();
 	}	
-	
 	
 }

@@ -29,11 +29,10 @@ public class Maand {
 	
 	@ManyToOne
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;
-	
+	private Kandidaat kandidaat;	
+
 	@OneToMany (mappedBy = "maand")
-	private Set<Werkdag> werkdag;
-	
+	private Set<Werkdag> werkdag;	
 	
 	public long getId() {
 		return id;
@@ -71,13 +70,7 @@ public class Maand {
 	public void setCommentContactpersoon(String commentContactpersoon) {
 		this.commentContactpersoon = commentContactpersoon;
 	}
-	public Set<Werkdag> getWerkdag() {
-		return werkdag;
-	}
-	public void setWerkdag(Set<Werkdag> werkdag) {
-		this.werkdag = werkdag;
-			
-		}
+
 	public goedKeuring getVerzendenWerknemer() {
 		return verzendenWerknemer;
 	}
@@ -88,7 +81,7 @@ public class Maand {
 
 	public void setKandidaat(Kandidaat kandidaat) {
 		this.kandidaat = kandidaat;
-	}
+	}	
 	
 	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {
@@ -122,8 +115,3 @@ enum goedKeuring{
 	AFGEKEURD,
 	ONBEPAALD;
 }
-	
-
-
-	
-
