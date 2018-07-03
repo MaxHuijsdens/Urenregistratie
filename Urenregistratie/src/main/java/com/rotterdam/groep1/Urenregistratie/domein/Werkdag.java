@@ -21,7 +21,7 @@ public class Werkdag {
 	
 	@ManyToOne 
 	@JoinColumn (name = "Maand_fk", referencedColumnName = "id")
-	private Maand maand;
+	private Maand maand;	
 	
 	public long getId() {
 		return id;
