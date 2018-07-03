@@ -13,8 +13,12 @@ import com.rotterdam.groep1.Urenregistratie.domein.Werkdag;
 @Component
 public interface WerkdagRepository extends CrudRepository<Werkdag, Long> {
 	
+
 	@Query(value = "SELECT * from maand m JOIN werkdag w ON m.id = w.maand_fk"
 			,nativeQuery = true)
 	List<Werkdag> findAllWerkdag();
+	
+	
+
 
 }

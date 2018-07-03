@@ -31,8 +31,8 @@ public class Maand {
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
 	private Kandidaat kandidaat;	
 
-	@OneToMany (mappedBy = "maand")
-	private Set<Werkdag> werkdag;	
+	//@OneToMany (mappedBy = "maand")
+	//private Set<Werkdag> werkdag;	
 	
 	public long getId() {
 		return id;
