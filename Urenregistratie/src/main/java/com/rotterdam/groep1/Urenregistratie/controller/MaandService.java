@@ -18,4 +18,24 @@ public class MaandService {
 	public Iterable<Maand> geefAllen() {
 		return maandRepository.findAll();
 	}
+	
+	public Maand save(Maand m) {
+		return maandRepository.save(m); 
+	}
+	
+	public Maand findById(Long id) {
+        return this.maandRepository.findById(id).orElse(null);
+    }
+	
+	public boolean existsById(Long id){
+        return this.maandRepository.existsById(id);
+	}
+	
+	public Maand getById(long id) {
+		return maandRepository.findById(id).orElse(null);
+	}
+	
+	public void deleteById(long id) {
+		maandRepository.deleteById(id);
+	}
 }
