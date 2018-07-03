@@ -18,14 +18,22 @@ public class Kandidaat extends Account implements Overzicht{
 	private long id;
 	private String telefoonnummer;
 	private double Uurtarief;
+	private String pasfotoUrl;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	public String getPasfotoUrl() {
+		return pasfotoUrl;
+	}
+	public void setPasfotoUrl(String pasfotoUrl) {
+		this.pasfotoUrl = pasfotoUrl;
+	}
+
+/*	@ManyToOne (cascade = CascadeType.ALL)
 	@JoinColumn (name = "Contactpersoon_fk", referencedColumnName = "id")
 	private Contactpersoon contactpersoon;
 	
-	@ManyToOne (cascade = CascadeType.ALL)
+	@ManyToOne //mappedBy
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
-	private Werkgever werkgever;
+	private Werkgever werkgever;	*/
 	
 
 	public long getId() {
@@ -46,7 +54,7 @@ public class Kandidaat extends Account implements Overzicht{
 	public void setUurtarief(double uurtarief) {
 		Uurtarief = uurtarief;
 	}
-	public Contactpersoon getContactpersoon() {
+/*	public Contactpersoon getContactpersoon() {
 		return contactpersoon;
 	}
 	public void setContactpersoon(Contactpersoon contactpersoon) {
@@ -56,8 +64,8 @@ public class Kandidaat extends Account implements Overzicht{
 		return werkgever;
 	}
 	public void setWerkgever(Werkgever werkgever) {
-		this.werkgever = werkgever;
-	}
+		this.werkgever = werkgever;	
+	}	*/
 
 	@Override
 	public Response getOverzicht() {

@@ -3,11 +3,14 @@ package com.rotterdam.groep1.Urenregistratie.domein;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.ws.rs.core.Response;
+
 
 @Entity
 public class Maand {
@@ -24,9 +27,15 @@ public class Maand {
 	private goedKeuring verzendenWerknemer;
 	private goedKeuring verzendenContactpersoon;
 	
-	@OneToMany (mappedBy = "maand")
-	private Set<Werkdag> werkdag;
 	
+/*	@ManyToOne
+	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
+	private Kandidaat kandidaat;	*/
+	
+	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
+	private Set<Werkdag> werkdag;	
+		
+
 	public long getId() {
 		return id;
 	}
@@ -63,16 +72,27 @@ public class Maand {
 	public void setCommentContactpersoon(String commentContactpersoon) {
 		this.commentContactpersoon = commentContactpersoon;
 	}
+
 	public Set<Werkdag> getWerkdag() {
 		return werkdag;
 	}
 	public void setWerkdag(Set<Werkdag> werkdag) {
-		this.werkdag = werkdag;
-			
-		}
+		this.werkdag = werkdag;				
+		}	
+		
 	public goedKeuring getVerzendenWerknemer() {
 		return verzendenWerknemer;
 	}
+	
+/*	public Kandidaat getKandidaat() {
+		return kandidaat;
+	}
+
+	public void setKandidaat(Kandidaat kandidaat) {
+		this.kandidaat = kandidaat;
+	}	*/
+	
+	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {
 		this.verzendenWerknemer = verzendenWerknemer;
 		if (verzendenWerknemer == goedKeuring.AFGEKEURD)
@@ -99,14 +119,8 @@ public class Maand {
 	
 	}	
 	
-
 enum goedKeuring{
 	GOEDGEKEURD,
 	AFGEKEURD,
 	ONBEPAALD;
 }
-	
-
-
-	
-

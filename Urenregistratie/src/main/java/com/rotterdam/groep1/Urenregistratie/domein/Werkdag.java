@@ -19,15 +19,10 @@ public class Werkdag {
 	private int urenZiek;
 	private int urenVerlof;
 	
-	@ManyToOne
+	@ManyToOne 
 	@JoinColumn (name = "Maand_fk", referencedColumnName = "id")
-	private Maand maand;
+	private Maand maand;	
 	
-	@ManyToOne
-	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;
-	
-
 	public long getId() {
 		return id;
 	}
@@ -82,15 +77,13 @@ public class Werkdag {
 
 	public void setMaand(Maand maand) {
 		this.maand = maand;
-	}
+	}	
 
-	public Kandidaat getKandidaat() {
-		return kandidaat;
-	}
 
-	public void setKandidaat(Kandidaat kandidaat) {
-		this.kandidaat = kandidaat;
-	}
 	
 	
 }
+
+
+	
+

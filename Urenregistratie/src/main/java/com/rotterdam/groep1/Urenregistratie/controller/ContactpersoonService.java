@@ -19,6 +19,8 @@ public class ContactpersoonService {
 	
 	public Contactpersoon save(Contactpersoon t) {
 		return contactpersoonRepository.save(t);
+		
+		//test
 	}
 	
 	public Contactpersoon getById(long id) {

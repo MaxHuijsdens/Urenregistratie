@@ -16,23 +16,23 @@ import javax.ws.rs.core.Response.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.rotterdam.groep1.Urenregistratie.controller.KandidaatService;
-import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
+import com.rotterdam.groep1.Urenregistratie.controller.MaandService;
+import com.rotterdam.groep1.Urenregistratie.domein.Maand;
 
 
-@Path("kandidaat")
+@Path("maand")
 @Component
-public class KandidaatEndpoint {
+public class MaandEndpoint {
 	@Autowired
-	KandidaatService kandidaatService;
+	MaandService maandService;
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response toonAllen() {
 		System.out.println("ik ben een endpoint");
-		Iterable<Kandidaat> tests = kandidaatService.geefAllen();
-		for (Kandidaat k : tests) {
-			System.out.println(k);
+		Iterable<Maand> tests = maandService.geefAllen();
+		for (Maand m : tests) {
+			System.out.println(m);
 		}
 		return Response.ok(tests).build();
 	}	
@@ -41,11 +41,11 @@ public class KandidaatEndpoint {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getKandidaatById(@PathParam("id") Long id){
-        if(this.kandidaatService.existsById(id)) {
-            Kandidaat kandidaat = this.kandidaatService.findById(id);
-            return Response.ok(kandidaat).build();
+        if(this.maandService.existsById(id)) {
+            Maand maand = this.maandService.findById(id);
+            return Response.ok(maand).build();
         }
-        System.out.println("Kandidaat id in GET niet gevonden!");
+        System.out.println("Maand id in GET niet gevonden!");
         return Response.status(Status.NOT_FOUND).build();
     }		
 	
@@ -53,31 +53,30 @@ public class KandidaatEndpoint {
 	@Path("/create")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
-	public Response postAccount(Kandidaat d) {
-		System.out.println("hallo");
-		Kandidaat result = kandidaatService.save(d);
+	public Response postMaand(Maand m) {
+		Maand result = maandService.save(m);
 	return Response.accepted(result.getId()).build();
 	}
 	
 	@PUT
-	@Path("/edit/{kid}")
+	@Path("/edit/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat c){
-		if (kandidaatService.getById(id) == null)
+	public Response updateMaand(@PathParam("id") Long id, Maand c){
+		if (maandService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();		
 		c.setId(id);
-		kandidaatService.save(c);		
+		maandService.save(c);		
 		return Response.accepted("GELUKT!").build();
 	}
 	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
-	public Response deleteKandidaat(@QueryParam("id") Long id) {
-		Kandidaat k = kandidaatService.getById(id);
+	public Response deleteMaand(@QueryParam("id") Long id) {
+		Maand k = maandService.getById(id);
 		System.out.println(k);
 		if (k != null) {
-			kandidaatService.deleteById(id);
+			maandService.deleteById(id);
 			return Response.noContent().build();
 		}
 		return Response.status(Status.NOT_FOUND).build();
