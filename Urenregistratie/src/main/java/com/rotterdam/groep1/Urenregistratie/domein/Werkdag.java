@@ -19,7 +19,7 @@ public class Werkdag {
 	private int urenZiek;
 	private int urenVerlof;
 	
-	@ManyToOne
+	@ManyToOne 
 	@JoinColumn (name = "Maand_fk", referencedColumnName = "id")
 	private Maand maand;
 	
