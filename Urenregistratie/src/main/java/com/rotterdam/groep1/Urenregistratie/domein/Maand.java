@@ -28,13 +28,13 @@ public class Maand {
 	private goedKeuring verzendenContactpersoon;
 	
 	
-	@ManyToOne
+/*	@ManyToOne
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;	
+	private Kandidaat kandidaat;	*/
 	
-	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
+/*	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
 
-	private Set<Werkdag> werkdag;	
+	private Set<Werkdag> werkdag;	*/
 	
 	public long getId() {
 		return id;
@@ -73,24 +73,24 @@ public class Maand {
 		this.commentContactpersoon = commentContactpersoon;
 	}
 
-	public Set<Werkdag> getWerkdag() {
+/*	public Set<Werkdag> getWerkdag() {
 		return werkdag;
 	}
 	public void setWerkdag(Set<Werkdag> werkdag) {
 		this.werkdag = werkdag;				
-		}	
+		}	*/
 		
 	public goedKeuring getVerzendenWerknemer() {
 		return verzendenWerknemer;
 	}
 	
-	public Kandidaat getKandidaat() {
+/*	public Kandidaat getKandidaat() {
 		return kandidaat;
 	}
 
 	public void setKandidaat(Kandidaat kandidaat) {
 		this.kandidaat = kandidaat;
-	}	
+	}	*/
 	
 	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {

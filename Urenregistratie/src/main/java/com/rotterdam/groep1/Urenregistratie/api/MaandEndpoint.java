@@ -59,9 +59,9 @@ public class MaandEndpoint {
 	}
 	
 	@PUT
-	@Path("/edit/{kid}")
+	@Path("/edit/{id}")
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response updateMaand(@PathParam("kid") Long id, Maand c){
+	public Response updateMaand(@PathParam("id") Long id, Maand c){
 		if (maandService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();		
 		c.setId(id);
