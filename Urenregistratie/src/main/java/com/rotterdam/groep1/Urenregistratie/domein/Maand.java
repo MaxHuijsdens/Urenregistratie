@@ -31,6 +31,7 @@ public class Maand {
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
 	private Kandidaat kandidaat;	
 
+
 	public long getId() {
 		return id;
 	}
