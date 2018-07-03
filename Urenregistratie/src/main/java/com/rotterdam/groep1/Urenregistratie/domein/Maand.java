@@ -34,7 +34,8 @@ public class Maand {
 	
 /*	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
 	private Set<Werkdag> werkdag;	*/	
-	
+		
+
 	public long getId() {
 		return id;
 	}
