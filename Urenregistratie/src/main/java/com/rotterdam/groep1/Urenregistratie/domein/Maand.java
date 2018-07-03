@@ -33,8 +33,7 @@ public class Maand {
 	private Kandidaat kandidaat;	*/
 	
 /*	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
-
-	private Set<Werkdag> werkdag;	*/
+	private Set<Werkdag> werkdag;	*/	
 	
 	public long getId() {
 		return id;
