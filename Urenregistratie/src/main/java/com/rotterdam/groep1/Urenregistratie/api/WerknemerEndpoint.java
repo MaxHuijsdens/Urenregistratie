@@ -69,6 +69,8 @@ public class WerknemerEndpoint implements Overzicht {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/deleteWerknemer")
 	public Response deleteWerknemer(@QueryParam("id") Long id) {
+		System.out.println("werknemer delete");
+
 		Werknemer k = werknemerService.getById(id);
 		System.out.println(k);
 		if (k != null) {

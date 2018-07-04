@@ -72,6 +72,8 @@ public class ContactpersoonEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
 	public Response deleteContactpersoon(@QueryParam("id") Long id) {
+		System.out.println("contactpersoon delete");
+
 		Contactpersoon c = contactpersoonService.getById(id);
 		
 		if (c != null) {

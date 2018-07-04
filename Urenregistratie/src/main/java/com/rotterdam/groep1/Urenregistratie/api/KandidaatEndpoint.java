@@ -75,6 +75,8 @@ public class KandidaatEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
 	public Response deleteKandidaat(@QueryParam("id") Long id) {
+		System.out.println("kandidaat delete");
+
 		Kandidaat k = kandidaatService.getById(id);
 		System.out.println(k);
 		if (k != null) {
