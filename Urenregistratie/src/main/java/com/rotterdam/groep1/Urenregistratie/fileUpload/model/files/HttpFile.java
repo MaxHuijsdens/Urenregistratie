@@ -30,12 +30,11 @@ public class HttpFile {
         this.parameters = parameters;
         this.stream = stream;
     }
-
-    /*
-    public String getExtension() {
+    
+   /* public String getExtension() {
     	return FilenameUtils.getExtension(submittedFileName);
-    }
-*/
+    }*/
+
     public String getSubmittedFileName() {
         return submittedFileName;
     }

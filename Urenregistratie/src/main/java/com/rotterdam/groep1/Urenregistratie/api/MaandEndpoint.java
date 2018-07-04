@@ -1,5 +1,7 @@
 package com.rotterdam.groep1.Urenregistratie.api;
 
+import java.util.List;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -17,7 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.rotterdam.groep1.Urenregistratie.controller.MaandService;
+import com.rotterdam.groep1.Urenregistratie.controller.WerkdagService;
 import com.rotterdam.groep1.Urenregistratie.domein.Maand;
+import com.rotterdam.groep1.Urenregistratie.domein.Werkdag;
 
 
 @Path("maand")
@@ -26,15 +30,38 @@ public class MaandEndpoint {
 	@Autowired
 	MaandService maandService;
 	
+	@Autowired
+	WerkdagService werkdagService;
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response toonAllen() {
-		System.out.println("ik ben een endpoint");
 		Iterable<Maand> tests = maandService.geefAllen();
 		for (Maand m : tests) {
 			System.out.println(m);
 		}
 		return Response.ok(tests).build();
+	}	
+	
+	@GET
+	@Path("/getMaand")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getMaand() {
+		Iterable<Werkdag> tests = werkdagService.geefAlleWerkagenPerMaand(5);
+		for (Werkdag w : tests) {
+			System.out.println(w);
+		}
+		return Response.ok(tests).build();
+	}	
+	
+	@Path("/createMaand/{uid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response createMaand(@PathParam("uid") long id) {
+		Maand maand = new Maand();
+		//for (aantal dagen in de maand) {
+			//Werkdag werkdag = new Werkdag();
+	//	}
+		return Response.ok().build();
 	}	
 	
 	@GET

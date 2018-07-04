@@ -28,9 +28,9 @@ public class Maand {
 	private goedKeuring verzendenContactpersoon;
 	
 	
-/*	@ManyToOne
+	@ManyToOne
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
-	private Kandidaat kandidaat;	*/
+	private Kandidaat kandidaat;	
 	
 	@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
 	private Set<Werkdag> werkdag;	
@@ -84,13 +84,13 @@ public class Maand {
 		return verzendenWerknemer;
 	}
 	
-/*	public Kandidaat getKandidaat() {
+	public Kandidaat getKandidaat() {
 		return kandidaat;
 	}
 
 	public void setKandidaat(Kandidaat kandidaat) {
 		this.kandidaat = kandidaat;
-	}	*/
+	}	
 	
 	
 	public int setVerzendenWerknemer(goedKeuring verzendenWerknemer) {
