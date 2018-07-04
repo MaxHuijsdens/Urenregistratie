@@ -47,7 +47,7 @@ public class MaandEndpoint {
 	@Path("/getMaand")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getMaand() {
-		Iterable<Werkdag> tests = werkdagService.geefAlleWerkagenPerMaand();
+		Iterable<Werkdag> tests = werkdagService.geefAlleWerkagenPerMaand(5);
 		for (Werkdag w : tests) {
 			System.out.println(w);
 		}
@@ -58,9 +58,9 @@ public class MaandEndpoint {
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response createMaand(@PathParam("uid") long id) {
 		Maand maand = new Maand();
-		for (aantal dagen in de maand) {
-			Werkdag werkdag = new Werkdag();
-		}
+		//for (aantal dagen in de maand) {
+			//Werkdag werkdag = new Werkdag();
+	//	}
 		return Response.ok().build();
 	}	
 	
