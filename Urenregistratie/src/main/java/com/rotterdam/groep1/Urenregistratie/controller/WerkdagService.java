@@ -38,6 +38,10 @@ public class WerkdagService {
 	public void deleteById(long id) {
 		werkdagRepository.deleteById(id);
 	}
+	
+	public Iterable<Werkdag> geefAlleWerkagenPerMaand(long id) {
+		return werkdagRepository.findAllWerkdag(id);
+	}
 
 		
 }
