@@ -80,6 +80,8 @@ public class FileUploadResource  {
     	
     	if (kandidaatService.existsById(id)) {
     		Kandidaat k = kandidaatService.getById(id);
+    		System.out.println(httpFile.getFilePath().toString());
+    		System.out.println(k);
     		k.setPasfotoUrl(httpFile.getFilePath().toString());
     		kandidaatService.save(k);
     	}

@@ -16,6 +16,10 @@ public interface KandidaatRepository extends CrudRepository<Kandidaat, Long> {
 	
 	/*
 	@Query(value = "SELECT * FROM werkgever w JOIN account a ON w.id = a.Werkgever_fk WHERE a.dtype='kandidaat'"
+
+	
+	/*@Query(value = "SELECT * FROM werkgever w JOIN account a ON w.id = a.Werkgever_fk WHERE a.dtype='kandidaat'"
+
 			,nativeQuery = true)
 	Optional<Kandidaat> findById(long Id);
 	

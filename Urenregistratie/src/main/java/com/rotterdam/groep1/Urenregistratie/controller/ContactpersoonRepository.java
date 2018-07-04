@@ -17,6 +17,9 @@ public interface ContactpersoonRepository extends CrudRepository<Contactpersoon,
 			,nativeQuery = true)
 	Optional<Contactpersoon> findById(long Id);
 	*/
+	/*@Query(value = "SELECT * FROM werkgever w JOIN account a ON w.id = a.Werkgever_fk WHERE a.dtype='contactpersoon'"
+			,nativeQuery = true)
+	Optional<Contactpersoon> findById(long Id);*/
 	
 }
 
