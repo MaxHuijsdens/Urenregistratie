@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.Map;
 
-import org.apache.commons.io.FilenameUtils;
+//import org.apache.commons.io.FilenameUtils;
 
 public class HttpFile {
 
@@ -32,9 +32,9 @@ public class HttpFile {
     }
 
     
-    public String getExtension() {
+   /* public String getExtension() {
     	return FilenameUtils.getExtension(submittedFileName);
-    }
+    }*/
 
     public String getSubmittedFileName() {
         return submittedFileName;
