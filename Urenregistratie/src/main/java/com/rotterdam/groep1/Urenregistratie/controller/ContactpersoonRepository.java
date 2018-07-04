@@ -12,11 +12,11 @@ import com.rotterdam.groep1.Urenregistratie.domein.Kandidaat;
 @Component
 public interface ContactpersoonRepository extends CrudRepository<Contactpersoon, Long>{
 
-	
+	/*
 	@Query(value = "SELECT * FROM werkgever w JOIN account a ON w.id = a.Werkgever_fk WHERE a.dtype='contactpersoon'"
 			,nativeQuery = true)
 	Optional<Contactpersoon> findById(long Id);
-	
+	*/
 	
 }
 
