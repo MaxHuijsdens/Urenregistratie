@@ -34,6 +34,7 @@ public class Kandidaat extends Account implements Overzicht{
 	@ManyToOne //mappedBy
 	@JoinColumn (name = "Werkgever_fk", referencedColumnName = "id")
 	private Werkgever werkgever;	
+	
 
 	public long getId() {
 		return id;	
