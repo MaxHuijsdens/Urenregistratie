@@ -32,6 +32,7 @@ public class Maand {
 	@JoinColumn (name = "Kandidaat_fk", referencedColumnName = "id")
 	private Kandidaat kandidaat;	
 	
+
 	//@OneToMany (mappedBy = "maand", fetch = FetchType.EAGER)
 	//private Set<Werkdag> werkdag;	
 		
@@ -73,6 +74,7 @@ public class Maand {
 		this.commentContactpersoon = commentContactpersoon;
 	}
 
+
 	/*public Set<Werkdag> getWerkdag() {
 		return werkdag;
 	}
@@ -80,6 +82,7 @@ public class Maand {
 		this.werkdag = werkdag;				
 		}	*/
 		
+
 	public goedKeuring getVerzendenWerknemer() {
 		return verzendenWerknemer;
 	}
