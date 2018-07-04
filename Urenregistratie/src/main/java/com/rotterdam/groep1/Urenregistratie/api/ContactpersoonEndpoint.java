@@ -58,6 +58,7 @@ public class ContactpersoonEndpoint {
 	@Path("/edit/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateContactpersoon(@PathParam("kid") Long id, Contactpersoon c){
+		System.out.println("contactpersoon put");
 		if (contactpersoonService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();
 		
@@ -71,6 +72,8 @@ public class ContactpersoonEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
 	public Response deleteContactpersoon(@QueryParam("id") Long id) {
+		System.out.println("contactpersoon delete");
+
 		Contactpersoon c = contactpersoonService.getById(id);
 		
 		if (c != null) {

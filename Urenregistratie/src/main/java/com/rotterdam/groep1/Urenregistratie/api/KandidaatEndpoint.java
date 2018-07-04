@@ -54,6 +54,7 @@ public class KandidaatEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response postAccount(Kandidaat d) {
+		System.out.println("hallo");
 		Kandidaat result = kandidaatService.save(d);
 	return Response.accepted(result.getId()).build();
 	}
@@ -62,6 +63,7 @@ public class KandidaatEndpoint {
 	@Path("/edit/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat c){
+		System.out.println("kandidaat put");
 		if (kandidaatService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();		
 		c.setId(id);
@@ -73,6 +75,8 @@ public class KandidaatEndpoint {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/delete")
 	public Response deleteKandidaat(@QueryParam("id") Long id) {
+		System.out.println("kandidaat delete");
+
 		Kandidaat k = kandidaatService.getById(id);
 		System.out.println(k);
 		if (k != null) {
