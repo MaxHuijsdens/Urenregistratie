@@ -53,9 +53,10 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    <groupId>org.glassfish.jersey.media</groupId>
-    <artifactId>jersey-media-multipart</artifactId>
-    <version>2.26</version>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-multipart</artifactId>
+			<version>2.26</version>
+		</dependency>
 	<dependency>
             <groupId>org.glassfish.jersey</groupId>
             <artifactId>jersey-bom</artifactId>
@@ -63,7 +64,6 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-</dependency>
 	</dependencies>
 
 	<build>
