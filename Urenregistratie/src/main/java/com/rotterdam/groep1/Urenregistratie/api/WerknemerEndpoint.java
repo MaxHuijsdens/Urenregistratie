@@ -55,6 +55,7 @@ public class WerknemerEndpoint implements Overzicht {
 	@Path("/editWerknemer/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateWerknemer(@PathParam("kid") Long id, Werknemer k){
+		System.out.println("werknemer put");
 		if (werknemerService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();
 		

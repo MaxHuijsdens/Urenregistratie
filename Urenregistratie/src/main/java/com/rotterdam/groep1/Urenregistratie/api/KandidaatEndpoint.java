@@ -63,6 +63,7 @@ public class KandidaatEndpoint {
 	@Path("/edit/{kid}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateKandidaat(@PathParam("kid") Long id, Kandidaat c){
+		System.out.println("kandidaat put");
 		if (kandidaatService.getById(id) == null)
 			return Response.status(Status.NOT_FOUND).build();		
 		c.setId(id);
